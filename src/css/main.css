@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+html {
+    /* font-family: 'Metal Mania', cursive; */
+    font-family: 'Lato', sans-serif;
+}
+
+.overall-wrapper {
+    border: 1px solid black;
+    padding: 2%;
+}
+
+.player-main {
+    display: flex
+}
+
+.player-main-data {
+    flex:1;
+}
+
+.middle-section {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.player-meta {
+ flex: 1;
+ padding-right: 2%;
+}
+
+.player-stats {
+    flex: 2
+}
+
+.footer {
+    display: flex;
+}
+
+.footer-item{
+    flex: 1;
+}

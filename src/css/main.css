@@ -1,14 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
 
 html {
     /* font-family: 'Metal Mania', cursive; */
-    font-family: 'Lato', sans-serif;
+    /* font-family: 'Lato', sans-serif; */
+    font-family: 'Work Sans', sans-serif;
 }
 
 .overall-wrapper {
-    border: 1px solid black;
+    border: 20px solid black;
     padding: 2%;
+    margin:5%;
 }
 
 .player-main {
@@ -30,13 +33,14 @@ html {
 }
 
 .player-stats {
-    flex: 2
+    flex: 4
 }
 
 .footer {
     display: flex;
+    align-items: center;
 }
 
 .footer-item{
-    flex: 1;
+    flex: 1
 }

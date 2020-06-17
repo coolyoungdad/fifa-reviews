@@ -12,7 +12,15 @@ const fetchData = async () => {
 const getResults = async () => {
   const $ = await fetchData();
   const playerStats = $('.stat_val > .stat_val').text();
-  console.log(playerStats)
+  
+
+  for (var i = 0; i < playerStats.length; i++) {
+    str = playerStats[i];
+    const jsonString = JSON.stringify(str);
+    console.log(jsonString)
+  }
+
+ 
 };
 
-getResults();
+getResults(); 

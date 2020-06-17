@@ -29,7 +29,7 @@ const Posts = props => (
                 </div>
                 <div className="player-review">
                     <h4>Review written by me goes here</h4>
-                    <p>Comparisons:
+                    <p>Comparisons: Rich man's TOTS Gnabry, TOTS Visca, Prime Moments George Best
                     </p>
                     <h3>Pace: 9.7/10 // Shooting: 9.3/10 // Passing: 9/10 // Dribbling 9.4/10 //
                         Defense: N/A // Physical: 7.4/10

@@ -1,4 +1,4 @@
-const siteUrl = "https://www.futbin.com/20/player/48282/jadon-sancho";
+const siteUrl = "https://www.futbin.com/20/player/45417/ronaldo";
 const axios = require("axios");
 const cheerio = require("cheerio");
 
@@ -11,16 +11,27 @@ const fetchData = async () => {
 
 const getResults = async () => {
   const $ = await fetchData();
-  const playerStats = $('.stat_val > .stat_val').text();
+  const playerStats = $('div.stat_val > div.stat_val');
+  const playerMeta = $('#info_content > table > tbody > tr > td > a');
+  const playerMetaToo = $('#info_content > table > tbody > tr > td');
+  const playerTraits = $('#traits_content > div');
+
+
+  playerMeta.each(function(){
+    console.log(JSON.stringify($(this).text()));
+  })
+
+  playerMetaToo.each(function(){
+    console.log(JSON.stringify($(this).text()));
+  })
+
+  playerTraits.each(function(){
+    console.log(JSON.stringify($(this).text()));
+  })  
   
-
-  for (var i = 0; i < playerStats.length; i++) {
-    str = playerStats[i];
-    const jsonString = JSON.stringify(str);
-    console.log(jsonString)
-  }
-
- 
+  playerStats.each(function(){
+    console.log(JSON.stringify($(this).text()));
+  })
 };
 
 getResults(); 

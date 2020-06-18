@@ -11,27 +11,32 @@ const fetchData = async () => {
 
 const getResults = async () => {
   const $ = await fetchData();
-  const playerStats = $('div.stat_val > div.stat_val');
-  const playerMeta = $('#info_content > table > tbody > tr > td > a');
-  const playerMetaToo = $('#info_content > table > tbody > tr > td');
-  const playerTraits = $('#traits_content > div');
 
-
-  playerMeta.each(function(){
-    console.log(JSON.stringify($(this).text()));
-  })
-
-  playerMetaToo.each(function(){
-    console.log(JSON.stringify($(this).text()));
-  })
-
-  playerTraits.each(function(){
-    console.log(JSON.stringify($(this).text()));
-  })  
+  const scrapedPlayerInfo = {}
   
-  playerStats.each(function(){
-    console.log(JSON.stringify($(this).text()));
+  const playerMetadata = $('tr')
+  playerMetadata.each((i, element) => {
+    const metadataName = $(element).find('th').text().trim()
+    const metadataValue = $(element).find('td').text().trim()
+    scrapedPlayerInfo[metadataName] = metadataValue;
   })
+
+  const mainStats = $('.main_stat')
+  mainStats.each((i, element) => {
+    const statName = $(element).find('.left_stat_name').text().trim()
+    const statVal = $(element).find('.stat_val > .stat_val').text().trim()
+    scrapedPlayerInfo[statName] = statVal;
+  })
+
+
+  const subStats = $('.sub_stat')
+  subStats.each((i, element) => {
+    const statName = $(element).find('.left_stat_name').text().trim()
+    const statVal = $(element).find('.stat_val > .stat_val').text().trim()
+    scrapedPlayerInfo[statName] = statVal;
+  })
+ 
+ console.log(JSON.stringify(scrapedPlayerInfo));
 };
 
 getResults(); 

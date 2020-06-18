@@ -1,4 +1,4 @@
-const siteUrl = "https://www.futbin.com/20/player/45417/ronaldo";
+const siteUrl = "https://www.futbin.com/20/player/48539/ferland-mendy";
 const axios = require("axios");
 const cheerio = require("cheerio");
 

@@ -3,11 +3,11 @@ const axios = require("axios");
 const cheerio = require("cheerio");
 
 
+
 const fetchData = async () => {
   const result = await axios.get(siteUrl);
   return cheerio.load(result.data);
 };
-
 
 const getResults = async () => {
   const $ = await fetchData();
@@ -37,6 +37,9 @@ const getResults = async () => {
   })
  
  console.log(JSON.stringify(scrapedPlayerInfo));
+ return JSON.stringify(scrapedPlayerInfo); 
 };
 
-getResults(); 
+module.exports = {
+  getResults: getResults
+}

@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Route} from 'react-router-dom';
 import Posts from './Posts'
 import Header from './Header'
 import Footer from './Footer'
+import Admin from './Admin'
 
 class App extends Component {
   state = {
@@ -17,14 +18,13 @@ class App extends Component {
       </div>
       <div>
         <div>
+          <Admin />
           <Posts />
         </div>
       </div>
-      
         <div>
           <Footer />
-        </div>
-      
+        </div>     
     </div>
     )
   };

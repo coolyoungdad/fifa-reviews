@@ -45,5 +45,5 @@ function getPosts() {
     })
 }
 
-addPost('poo', 'butt', 'farts', '{"poo":"haha"}');
+addPost('x', 'y', 'z', '{"xx":"yy"}');
 getPosts().then((rows) => console.log(rows));

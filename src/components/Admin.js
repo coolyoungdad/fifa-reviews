@@ -1,64 +1,70 @@
-import React from "react";
+import React, {Component} from "react";
+class Admin extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            FutbinURL: '',
+            Review: '',
+            Comparison:'',
+            Rating:''
+        }
+    }
 
-export default class Form extends React.Component {
-    state = {
-        FutbinURL: "",
-        Review: "",
-        Comparison: "",
-        Rating:""
-    };
-
-    change = e => {
+    handleChange = (event) => {
         this.setState({
-            [e.target.name]: e.target.value, 
+            [event.target.name]: event.target.value
         });
- }
+    }
 
-    // onSubmit = (e) => {
-    //     e.preventDefault();
-    //     console.log(this.state);
-    //     this.props.onSubmit(this.state);
-    //     this.setState({FutbinURL: "",
-    //     Review: "",
-    //     Comparison: "",
-    //     Rating:""})
-    // }
+    handleSubmit = (event) => {
+        console.log(console.log(JSON.parse(JSON.stringify(this.state))))
+        event.preventDefault();
+    }
 
     render() {
         return (
-            <form>
-                <input
-                    name="FutbinURL"
-                    placeholder="Futbin player page URL"
-                    value
-                    ={this.state.FutbinURL}
-                    onChange={e => this.change(e)}/>
+            <form onSubmit={this.handleSubmit}>
+                <label>
+                    URL:
+                    <input
+                        type="text"
+                        name="FutbinURL"
+                        placeholder="FutbinURL"
+                        value={this.state.FutbinURL}
+                        onChange={this.handleChange}/>
+                </label>
 
-                <input
-                    name="Review"
-                    placeholder="Review"
-                    value
-                    ={this.state.Review}
-                    onChange={e => this.change(e)}/>
+                <label>Review:
+                    <input
+                        type="text"
+                        name="Review"
+                        placeholder="Review"
+                        value={this.state.Review}
+                        onChange={this.handleChange}/>
+                </label>
 
-                <input
-                    name="Comparisons"
-                    placeholder="Comparisons"
-                    value
-                    ={this.state.Comparison}
-                    onChange={e => this.change(e)}/>
+                <label>Comparison:
+                    <input
+                        type="text"
+                        name="Comparison"
+                        placeholder="Comparison"
+                        value={this.state.Comparison}
+                        onChange={this.handleChange}/>
+                </label>
 
-                <input
-                    name="Ratings"
-                    placeholder="Ratings"
-                    value
-                    ={this.state.Rating}
-                    onChange={e => this.change(e)}/>
+                <label>Rating:
+                    <input
+                        type="text"
+                        name="Rating"
+                        placeholder="Rating"
+                        value={this.state.Rating}
+                        onChange={this.handleChange}/>
+                </label>
 
-                <button >
-                    Submit
-                </button>
+                <input type="submit" value="Submit"/>
             </form>
-        )
+        );
     }
 }
+
+export default Admin

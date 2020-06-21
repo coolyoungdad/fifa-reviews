@@ -45,5 +45,5 @@ function getPosts() {
     })
 }
 
-addPost('x', 'y', 'z', '{"xx":"yy"}');
+// addPost('x', 'y', 'z', '{"xx":"yy"}');
 getPosts().then((rows) => console.log(rows));

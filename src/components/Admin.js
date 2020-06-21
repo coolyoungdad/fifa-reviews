@@ -1,4 +1,7 @@
 import React, {Component} from "react";
+import axios from "axios";
+import {fetchData} from "../server/scraper"
+
 class Admin extends React.Component {
     constructor(props) {
         super(props);
@@ -17,8 +20,9 @@ class Admin extends React.Component {
     }
 
     handleSubmit = (event) => {
-        console.log(console.log(JSON.parse(JSON.stringify(this.state))))
         event.preventDefault();
+        fetchData();
+        console.log(console.log(JSON.parse(JSON.stringify(this.state))))
     }
 
     render() {

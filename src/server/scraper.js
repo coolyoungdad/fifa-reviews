@@ -1,8 +1,8 @@
-const siteUrl = "https://www.futbin.com/20/player/48539/ferland-mendy";
+
 const axios = require("axios");
 const cheerio = require("cheerio");
 
-
+const siteUrl = "https://www.futbin.com/20/player/45417/ronaldo";
 
 const fetchData = async () => {
   const result = await axios.get(siteUrl);
@@ -41,5 +41,6 @@ const getResults = async () => {
 };
 
 module.exports = {
-  getResults: getResults
+  getResults: getResults,
+  fetchData: fetchData
 }

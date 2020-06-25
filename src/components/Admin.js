@@ -1,19 +1,12 @@
 import React, {Component} from "react";
-// import axios from "axios";
-// import cors from 'cors';
-// import {fetchData} from "../server/scraper"
-
-var request = require("request");
-
-var options = { method: 'POST', url: 'http://localhost:3001' };
+import axios from 'axios'
+// import request from 'request'
+// var request = require('request')
 
 
 
-
-
-
-
-class Admin extends React.Component {
+class Admin extends Component {
+    
     constructor(props) {
         super(props);
         this.state = {
@@ -24,8 +17,7 @@ class Admin extends React.Component {
         }
     }
 
-    
-
+   
     handleChange = (event) => {
         this.setState({
             [event.target.name]: event.target.value
@@ -34,9 +26,17 @@ class Admin extends React.Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        request(options);
-        console.log(console.log(JSON.parse(JSON.stringify(this.state))))
+        axios.post(`http://localhost:3001`, this.state)
+        .then(res => {
+          console.log(res);
+          console.log(res.data);
+        })
     }
+        // var options = axios({method: 'POST', body: this.state, url: 'http://localhost:3001'})
+        // console.log(options);
+        // request(options);
+        // console.log(console.log(JSON.parse(JSON.stringify(this.state))))
+    
 
     render() {
         return (

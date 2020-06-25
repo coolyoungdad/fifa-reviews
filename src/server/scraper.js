@@ -2,7 +2,7 @@
 const axios = require("axios");
 const cheerio = require("cheerio");
 
-const siteUrl = "https://www.futbin.com/20/player/48282/jadon-sancho";
+const siteUrl = "https://www.futbin.com/20/player/44079/lionel-messi";
 
 const fetchData = async () => {
   const result = await axios.get(siteUrl);

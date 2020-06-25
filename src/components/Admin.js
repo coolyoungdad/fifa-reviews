@@ -1,6 +1,17 @@
 import React, {Component} from "react";
-import axios from "axios";
-import {fetchData} from "../server/scraper"
+// import axios from "axios";
+// import cors from 'cors';
+// import {fetchData} from "../server/scraper"
+
+var request = require("request");
+
+var options = { method: 'POST', url: 'http://localhost:3001' };
+
+
+
+
+
+
 
 class Admin extends React.Component {
     constructor(props) {
@@ -13,6 +24,8 @@ class Admin extends React.Component {
         }
     }
 
+    
+
     handleChange = (event) => {
         this.setState({
             [event.target.name]: event.target.value
@@ -21,12 +34,13 @@ class Admin extends React.Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        fetchData();
+        request(options);
         console.log(console.log(JSON.parse(JSON.stringify(this.state))))
     }
 
     render() {
         return (
+
             <form onSubmit={this.handleSubmit}>
                 <label>
                     URL:

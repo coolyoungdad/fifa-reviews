@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import axios from 'axios'
-// import request from 'request'
+import request from 'request'
 // var request = require('request')
 
 
@@ -24,18 +24,19 @@ class Admin extends Component {
         });
     }
 
-    handleSubmit = (event) => {
+    handleSubmit = async (event) => {
         event.preventDefault();
-        axios.post(`http://localhost:3001`, this.state)
-        .then(res => {
-          console.log(res);
-          console.log(res.data);
-        })
-    }
-        // var options = axios({method: 'POST', body: this.state, url: 'http://localhost:3001'})
-        // console.log(options);
-        // request(options);
+        var options = axios({method: 'POST', body: this.state, url: 'http://localhost:3001'})
+        console.log(options);
+        request(options);
         // console.log(console.log(JSON.parse(JSON.stringify(this.state))))
+        // axios.post(`http://localhost:3001`, this.state)
+        // .then(res => {
+        //   console.log(res);
+        //   console.log(res.data);
+        // })
+    }
+        
     
 
     render() {

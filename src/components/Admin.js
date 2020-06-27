@@ -1,8 +1,6 @@
 import React, {Component} from "react";
 import axios from 'axios'
-import request from 'request'
-// var request = require('request')
-
+// import {fetchData} from '../server/scraper';
 
 
 class Admin extends Component {
@@ -26,15 +24,12 @@ class Admin extends Component {
 
     handleSubmit = async (event) => {
         event.preventDefault();
-        var options = axios({method: 'POST', body: this.state, url: 'http://localhost:3001'})
-        console.log(options);
-        request(options);
-        // console.log(console.log(JSON.parse(JSON.stringify(this.state))))
-        // axios.post(`http://localhost:3001`, this.state)
-        // .then(res => {
-        //   console.log(res);
-        //   console.log(res.data);
-        // })
+        
+        await axios.post(`http://localhost:3001`, this.state)
+        .then(res => {
+          console.log(res);
+          console.log(res.data);
+        })
     }
         
     

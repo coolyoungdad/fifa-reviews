@@ -2,13 +2,13 @@
 const axios = require("axios");
 const cheerio = require("cheerio");
 
-const fetchData = async (URL) => {
-  const result = await axios.get(URL);
+const fetchData = async (url) => {
+  const result = await axios.get(url);
   return cheerio.load(result.data);
 };
 
-const getResults = async () => {
-  const $ = await fetchData();
+const getResults = async (url) => {
+  const $ = await fetchData(url);
 
   const scrapedPlayerInfo = {}
   
@@ -40,5 +40,4 @@ const getResults = async () => {
 
 module.exports = {
   getResults: getResults,
-  fetchData: fetchData
 }

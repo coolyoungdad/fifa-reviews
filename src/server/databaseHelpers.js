@@ -14,18 +14,18 @@ module.exports = {
  * This creates a table for posts within the DB, if it does not already exist.
  */
 function createTables() {
-    DATABASE.run('CREATE TABLE IF NOT EXISTS posts (ratings TEXT NOT NULL, reviews TEXT NOT NULL, comparisons TEXT NOT NULL, player_json TEXT NOT NULL, ts INTEGER NOT NULL)');
+    DATABASE.run('CREATE TABLE IF NOT EXISTS posts (ratings TEXT NOT NULL, review TEXT NOT NULL, comparisons TEXT NOT NULL, player_json TEXT NOT NULL, ts INTEGER NOT NULL)');
 }
 
 /**
  * Inserts post data into the reviews table
  * @param {string} ratings 
- * @param {string} reviews 
+ * @param {string} review
  * @param {string} comparisons 
  * @param {string} player_json 
  */
-function addPost(ratings, reviews, comparisons, player_json) {
-    DATABASE.run('INSERT INTO posts VALUES (?, ?, ?, ?, ?)', ratings, reviews, comparisons, player_json, (new Date()).getTime());
+function addPost(ratings, review, comparisons, player_json) {
+    DATABASE.run('INSERT INTO posts VALUES (?, ?, ?, ?, ?)', ratings, review, comparisons, player_json, (new Date()).getTime());
 }
 
 /**
@@ -40,10 +40,15 @@ function getPosts() {
             if (err) {
                 reject(err);
             }
-            resolve(rows);
+            console.log(rows);
+            resolve(rows.map(row => {
+                return {
+                    ratings: row['ratings'],
+                    review: row['review'],
+                    comparisons: row['comparisons'],
+                    player_json: JSON.parse(row['player_json'])
+                }
+            }));
         });
     })
 }
-
-// addPost('x', 'y', 'z', '{"xx":"yy"}');
-// getPosts().then((rows) => console.log(rows));

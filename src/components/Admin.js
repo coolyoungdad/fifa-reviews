@@ -24,7 +24,6 @@ class Admin extends Component {
 
     handleSubmit = async (event) => {
         event.preventDefault();
-        
         await axios.post(`http://localhost:3001`, this.state)
         .then(res => {
           console.log(res);

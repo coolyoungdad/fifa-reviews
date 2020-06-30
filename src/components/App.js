@@ -1,9 +1,9 @@
 import React , {Component} from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
-import Posts from './Posts'
 import Header from './Header'
 import Footer from './Footer'
 import Admin from './Admin'
+import PostsContainer from './PostsContainer';
 
 class App extends Component {
   state = {
@@ -19,7 +19,7 @@ class App extends Component {
       <div>
         <div>
           <Admin />
-          <Posts />
+          <PostsContainer />
         </div>
       </div>
         <div>

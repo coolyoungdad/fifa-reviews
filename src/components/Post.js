@@ -1,4 +1,6 @@
 import React from 'react';
+import LinesEllipsis from 'react-lines-ellipsis'
+
 
 class Post extends React.Component {
 
@@ -26,13 +28,11 @@ class Post extends React.Component {
                         <h1>{this.props.player_json.Revision} {this.props.player_json.Name}</h1>
                     </div>
                     <div className="player-review">
-                            <p><h3>Review:</h3> {this.props.review}</p>
-                            <p><h3>Comparisons:</h3> {this.props.comparisons}
-                            </p>
-                            <h3>Ratings: {this.props.ratings}
-                            </h3>
-                        </div>
-           
+                        <LinesEllipsis text={this.props.review} maxLine='10' ellipsis='...' trimRight basedOn='words' className={this.state.isShow ? "hide" : "show"}/>
+                        <p className={this.state.isShow ? "show" : "hide"}><h3>Review:</h3> {this.props.review}</p>
+                        <p><h3>Comparisons:</h3> {this.props.comparisons}</p>
+                        <h3>Ratings: {this.props.ratings}</h3>
+                    </div>
                     <div className="info-column" className={this.state.isShow ? "show" : "hide"}>
                         <div className="player-main"></div>
                         <div className="middle-section">

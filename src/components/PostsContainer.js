@@ -11,8 +11,10 @@ function PostsContainer() {
         async function fetchData() {
             const result = await Axios.get('http://localhost:3001');
             setPosts(result.data.map((data, i) => {
-                console.log(data);
+                console.log(data)
+                console.log(result)
                 return <Post {...data} key={i} />
+                
             }));
         }
         fetchData()

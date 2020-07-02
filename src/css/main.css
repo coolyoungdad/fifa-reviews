@@ -8,6 +8,12 @@ html {
     font-family: 'Work Sans', sans-serif;
 }
 
+span {
+    font-weight: 800;
+}
+
+
+
 .overall-wrapper {
     border: 5px solid black;
     padding: 2%;
@@ -15,25 +21,33 @@ html {
 }
 
 .player-main {
-    display: flex
+    display: flex;
+    flex-direction:row;  
+    flex-wrap: wrap;
 }
 
 .player-main-data {
-    flex:1;
+    flex:0 0 auto;
+    padding-right: 5em;
 }
 
-.middle-section {
-    display: flex;
+.middle-section { 
+    width:100%;
+    height:100%;
+    display:flex;
+    flex-direction:row;  
     flex-wrap: wrap;
 }
 
 .player-meta {
- flex: 1;
- padding-right: 2%;
+    flex: 0 0 auto; 
+    
+
 }
 
 .player-stats {
-    flex: 4
+    flex: 1 0 auto;
+    min-width: 0;
 }
 
 .footer {

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {BrowserRouter as Router, Switch, Route, NavLink} from "react-router-dom";
+// import {BrowserRouter as Router, Switch, Route, NavLink} from "react-router-dom";
 
 const Posts = props => (
     <div className="overall-wrapper">

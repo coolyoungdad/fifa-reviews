@@ -12,6 +12,9 @@ span {
     font-weight: 800;
 }
 
+.hide {
+    display:none;
+}
 
 
 .overall-wrapper {

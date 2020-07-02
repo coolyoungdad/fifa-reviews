@@ -2,14 +2,21 @@ import React from 'react';
 
 class Post extends React.Component {
 
+    state = {
+        isShow: false
+      };
+
+      handleToggle = () => {
+        const { isShow } = this.state;
+        this.setState({ isShow: !isShow });
+      };
+
     render() {
 
         // const Playerstats =
         // Object.entries(this.props.player_json).map(([key,value])=>{     return (
         // <div>{key} : {value.toString()}</div>     );   })
 
-
-        // console.log(this.props)
         return (
             <div className="overall-wrapper">
                 <div className="image-wrapper"></div>
@@ -18,7 +25,15 @@ class Post extends React.Component {
                         <div></div>
                         <h1>{this.props.player_json.Revision} {this.props.player_json.Name}</h1>
                     </div>
-                    <div className="info-column">
+                    <div className="player-review">
+                            <p><h3>Review:</h3> {this.props.review}</p>
+                            <p><h3>Comparisons:</h3> {this.props.comparisons}
+                            </p>
+                            <h3>Ratings: {this.props.ratings}
+                            </h3>
+                        </div>
+           
+                    <div className="info-column" className={this.state.isShow ? "show" : "hide"}>
                         <div className="player-main"></div>
                         <div className="middle-section">
                             <div className="player-meta">
@@ -84,18 +99,10 @@ class Post extends React.Component {
                                 <p>Strength: {this.props.player_json.Strength}</p>
                                 <p>Aggression: {this.props.player_json.Aggression}</p>
                             </div>
-
                             {/* {Playerstats} */}
-
-                        </div>
-                        <div className="player-review">
-                            <p><h4>Review:</h4> {this.props.review}</p>
-                            <p><span>Comparisons:</span> {this.props.comparisons}
-                            </p>
-                            <h3>Ratings: {this.props.ratings}
-                            </h3>
-                        </div>
+                        </div>                   
                     </div>
+                    <input type="submit" value="Expand" onClick={this.handleToggle} className={this.state.isShow ? "on" : "off"} />
                 </div>
             </div>
         )

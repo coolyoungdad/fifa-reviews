@@ -29,16 +29,17 @@ class Post extends React.Component {
                     </div>
 
                     <div className="player-review">
-                        <LinesEllipsis text={this.props.review} maxLine='4' ellipsis='...' trimRight basedOn='words' className={this.state.isShow ? "hide" : "show"}/>
+                        <LinesEllipsis text={this.props.review} maxLine='2' ellipsis='...' trimRight basedOn='words' className={this.state.isShow ? "hide" : "show"}/>
+                        
                         <p className={this.state.isShow ? "show" : "hide"}>
                         <h3>Review:</h3> {this.props.review}</p>
                         <p><h3>Comparisons:</h3> {this.props.comparisons}</p>
-                        <h3>Ratings: {this.props.ratings}</h3>
+                        <h3 className={this.state.isShow ? "show" : "hide"}>Ratings: {this.props.ratings}</h3>
                     </div>
 
                     <div className="info-column" className={this.state.isShow ? "show" : "hide"}>
-                        <div className="player-main"></div>
-                        <div className="middle-section">
+                        <div className="player-main"></div>                       
+                        <div className="middle-section">     
                             <div className="player-meta">
                                 <h3>Player Details</h3>
                                 <p className="player-main-data"><span>Version:</span> {this.props.player_json.Revision}</p>

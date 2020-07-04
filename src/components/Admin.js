@@ -43,7 +43,7 @@ class Admin extends Component {
         return (
 <div>
     
-            <form className="form-wrapper" onSubmit={this.handleSubmit}>
+            <form className="admin-wrapper" onSubmit={this.handleSubmit}>
             <h1>Write a review! </h1>
 
                 <label className="label-fields">

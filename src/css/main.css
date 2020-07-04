@@ -1,26 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;600&display=swap');
+@import url( 'https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap');
+@import url( 'https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url( 'https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
+@import url( 'https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;600&display=swap');
 
+/*global css*/
+/* -------- */
 body {
-
-    
+    white-space: pre-wrap;
 }
 
-.overall-wrapper {
-    background: white;
-}
-
-.big-title {
-    font-weight: 800;
-    font-size: 48px;
-}
-
-h1, h2, h4 {
+h1,
+h2,
+h4 {
     /* font-family: 'Work Sans', sans-serif; */
     font-family: 'Hind Madurai', sans-serif;
-    font-weight: 300;
+    font-weight: 600;
 }
 
 h3 {
@@ -32,13 +26,16 @@ h3 {
 p {
     /* font-family: 'Metal Mania', cursive; */
     font-family: 'Lato', sans-serif;
+    /* flex-wrap: wrap; */
+
 }
 
 span {
     font-weight: 800;
 }
 
-textarea, textarea[type=text]  {
+textarea,
+textarea[type=text] {
     resize: none;
     font-family: 'Lato', sans-serif;
 
@@ -48,65 +45,92 @@ input {
     line-height: 2em;
 }
 
-.form-wrapper {
+/*header.js css*/
+/* ----------- */
+.header {
+    padding: 0 2%;
+    margin: 0 5%;
+}
+
+.big-title {
+    font-family: 'Hind Madurai', sans-serif;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 800;
+    font-size: 48px;
+    color: black;
+}
+
+/*admin.js css*/
+/* ---------- */
+.admin-wrapper {
     display: flex;
     flex-direction: column;
-
     padding: 2% 10%;
-    margin:3% 15%;
-    box-shadow: 1px 1px 20px #888 , 1px 1px 20px #888 , 1px 1px 20px #888  inset;
+    margin: 3% 15%;
+    box-shadow: 1px 1px 20px #888 , 1px 1px 20px #888 , 1px 1px 20px #888 inset;
 
-    
 }
 .label-fields {
     font-family: 'Lato', sans-serif;
-
     padding: 2vh 0;
     flex: 1;
-
     display: flex;
     justify-content: center;
     flex-direction: column;
-
-}
-.hide {
-    display:none;
 }
 
+/*post.js css*/
+/* --------- */
 
+
+.LinesEllipsis,
+.LinesEllipsis--clamped {
+    /* font-family: 'Work Sans', sans-serif; */
+    font-family: 'Hind Madurai', sans-serif;
+    font-weight: 300;
+
+}
 .overall-wrapper {
-    box-shadow: 1px 1px 20px #888 , 1px 1px 20px #888 , 1px 1px 20px #888  inset;
-
+    box-shadow: 1px 1px 10px #888 , 1px 1px 10px #888 , 1px 1px 10px #888 inset;
     padding: 3.5%;
+    margin: 2% 5% 4%;
+}
 
-    margin:5%;
+.player-name {
+    text-align: left;
+    color: black;
+    font-family: 'Hind Madurai', sans-serif;
+    font-weight: 600;
 }
 
 .player-main {
     display: flex;
-    flex-direction:row;  
+    flex-direction: row;
     flex-wrap: wrap;
+    border-top: 2px grey dashed;
+    padding: 1%;
+    margin-top: 3.5%;
 }
 
 .player-main-data {
-    flex:0 0 auto;
+    flex: 0 0 auto;
     padding-right: 5em;
 }
 
-.middle-section { 
-    width:100%;
-    height:100%;
-    display:flex;
-    flex-direction:row;  
+.middle-section {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
 }
 
 .player-meta {
-    flex: 0 0 auto; 
-    
+    flex: 0 0 auto;
 
 }
-.player-review{
+.player-review {
     page-break-before: always;
 }
 .player-stats {
@@ -114,6 +138,12 @@ input {
     min-width: 0;
 }
 
+.hide {
+    display: none;
+}
+
+/*footer.js css*/
+/* --------- */
 .footer {
     display: flex;
     align-items: center;
@@ -121,5 +151,6 @@ input {
     width: 100%;
 }
 
-.footer-item{
-padding:  2vh;}
+.footer-item {
+    padding: 2vh;
+}

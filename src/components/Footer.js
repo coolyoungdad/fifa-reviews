@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 
-const Footer = props => (
+const Footer = () => (
     <footer className="footer">
         <p className="footer-item">Contact</p>
         <p className="footer-item">Instagram</p>

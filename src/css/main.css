@@ -3,6 +3,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;600&display=swap');
 
+body {
+
+    
+}
+
+.overall-wrapper {
+    background: white;
+}
+
+.big-title {
+    font-weight: 800;
+    font-size: 48px;
+}
+
 h1, h2, h4 {
     /* font-family: 'Work Sans', sans-serif; */
     font-family: 'Hind Madurai', sans-serif;
@@ -24,16 +38,47 @@ span {
     font-weight: 800;
 }
 
+textarea, textarea[type=text]  {
+    resize: none;
+    font-family: 'Lato', sans-serif;
+
+}
+
+input {
+    line-height: 2em;
+}
+
+.form-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    padding: 2% 10%;
+    margin:3% 15%;
+    box-shadow: 1px 1px 20px #888 , 1px 1px 20px #888 , 1px 1px 20px #888  inset;
+
+    
+}
+.label-fields {
+    font-family: 'Lato', sans-serif;
+
+    padding: 2vh 0;
+    flex: 1;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+}
 .hide {
     display:none;
 }
 
 
 .overall-wrapper {
-    /* border: 1px solid black; */
-    box-shadow: 1px 10px 20px grey, 1px 10px 20px grey, 1px 10px 20px grey inset;
+    box-shadow: 1px 1px 20px #888 , 1px 1px 20px #888 , 1px 1px 20px #888  inset;
 
-    padding: 2%;
+    padding: 3.5%;
+
     margin:5%;
 }
 
@@ -61,7 +106,9 @@ span {
     
 
 }
-
+.player-review{
+    page-break-before: always;
+}
 .player-stats {
     flex: 1 0 auto;
     min-width: 0;
@@ -70,8 +117,9 @@ span {
 .footer {
     display: flex;
     align-items: center;
+    justify-content: center;
+    width: 100%;
 }
 
 .footer-item{
-    flex: 1
-}
+padding:  2vh;}

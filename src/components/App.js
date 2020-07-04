@@ -17,10 +17,8 @@ class App extends Component {
                     </div>
                     <div>
                         <div>
-                          <Route exact path="/" component={PostsContainer}/>
-                          <Route path="/admin" component={Admin}/>
-                            {/* <Admin/> */}
-                            {/* <PostsContainer className="white"/> */}
+                            <Route exact path="/" component={PostsContainer}/>
+                            <Route path="/admin" component={Admin}/>
                         </div>
                     </div>
                     <div>

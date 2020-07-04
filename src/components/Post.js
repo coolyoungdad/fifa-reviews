@@ -1,7 +1,6 @@
 import React from 'react';
 import LinesEllipsis from 'react-lines-ellipsis'
 
-
 class Post extends React.Component {
 
     state = {
@@ -47,7 +46,7 @@ class Post extends React.Component {
                                 <p className="player-main-data">Nation: {this.props.player_json.Nation}</p>
                                 <p className="player-main-data">Age: {this.props.player_json.Age}</p>
                                 <p>Height: {this.props.player_json.Height}</p>
-                                <p>Weight: {this.props.player_json.Weight}</p>
+                                <p>Weight: {this.props.player_json.Weight}kg</p>
                                 <p>Skills: {this.props.player_json.Skills}*</p>
                                 <p>Weak Foot: {this.props.player_json['Weak Foot']}*</p>
                                 <p>Foot: {this.props.player_json.Foot}</p>

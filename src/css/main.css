@@ -5,10 +5,6 @@
 
 /*global css*/
 /* -------- */
-body {
-    white-space: pre-wrap;
-}
-
 h1,
 h2,
 h4 {
@@ -24,7 +20,6 @@ h3 {
 }
 
 p {
-    /* font-family: 'Metal Mania', cursive; */
     font-family: 'Lato', sans-serif;
     /* flex-wrap: wrap; */
 
@@ -47,14 +42,25 @@ input {
 
 /*header.js css*/
 /* ----------- */
-.header {
-    padding: 0 2%;
+.header-wrapper {
+    border-bottom: 4px double black;
+
     margin: 0 5%;
+    padding: 0 5% 2vh;
+    max-width: 100%;
 }
 
-.big-title {
-    font-family: 'Hind Madurai', sans-serif;
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.big-title,
+.big-title:visited {
+    font-family: 'Metal Mania', cursive;
     text-decoration: none;
+    flex: 1;
     text-align: center;
     font-weight: 800;
     font-size: 48px;
@@ -83,7 +89,6 @@ input {
 /*post.js css*/
 /* --------- */
 
-
 .LinesEllipsis,
 .LinesEllipsis--clamped {
     /* font-family: 'Work Sans', sans-serif; */
@@ -92,6 +97,7 @@ input {
 
 }
 .overall-wrapper {
+    white-space: pre-wrap;
     box-shadow: 1px 1px 10px #888 , 1px 1px 10px #888 , 1px 1px 10px #888 inset;
     padding: 3.5%;
     margin: 2% 5% 4%;

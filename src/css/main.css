@@ -2,20 +2,27 @@
 @import url( 'https://fonts.googleapis.com/css2?family=Lato&display=swap');
 @import url( 'https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
 @import url( 'https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Modak&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
 
+
+.App-header{
+    margin-top: -10px;
+    background-color: #21D4FD;
+    background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 33%, #ffffff 66%, #ffffff 100%);     
+}
 /*global css*/
 /* -------- */
 h1,
 h2,
 h4 {
-    /* font-family: 'Work Sans', sans-serif; */
+    font-family: 'Work Sans', sans-serif;
     font-family: 'Hind Madurai', sans-serif;
-    font-weight: 600;
 }
 
 h3 {
     font-family: 'Hind Madurai', sans-serif;
-    font-weight: 600;
 
 }
 
@@ -26,7 +33,6 @@ p {
 }
 
 span {
-    font-weight: 800;
 }
 
 textarea,
@@ -43,7 +49,7 @@ input {
 /*header.js css*/
 /* ----------- */
 .header-wrapper {
-    border-bottom: 4px double black;
+    /* border-bottom: 4px double black; */
 
     margin: 0 5%;
     padding: 0 5% 2vh;
@@ -51,6 +57,7 @@ input {
 }
 
 .header {
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -59,10 +66,11 @@ input {
 .big-title,
 .big-title:visited {
     font-family: 'Metal Mania', cursive;
+    /* font-family: 'Hind Madurai', sans-serif; */;
     text-decoration: none;
     flex: 1;
     text-align: center;
-    font-weight: 800;
+    /* font-weight: 300; */
     font-size: 48px;
     color: black;
 }
@@ -91,10 +99,7 @@ input {
 
 .LinesEllipsis,
 .LinesEllipsis--clamped {
-    /* font-family: 'Work Sans', sans-serif; */
     font-family: 'Hind Madurai', sans-serif;
-    font-weight: 300;
-
 }
 .overall-wrapper {
     white-space: pre-wrap;
@@ -106,8 +111,8 @@ input {
 .player-name {
     text-align: left;
     color: black;
-    font-family: 'Hind Madurai', sans-serif;
-    font-weight: 600;
+    font-family: 'Metal Mania', cursive;
+    font-size: 18px;
 }
 
 .player-main {

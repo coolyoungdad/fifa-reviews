@@ -14,18 +14,20 @@ module.exports = {
  * This creates a table for posts within the DB, if it does not already exist.
  */
 function createTables() {
-    DATABASE.run('CREATE TABLE IF NOT EXISTS posts (ratings TEXT NOT NULL, review TEXT NOT NULL, comparisons TEXT NOT NULL, player_json TEXT NOT NULL, ts INTEGER NOT NULL)');
+    DATABASE.run('CREATE TABLE IF NOT EXISTS posts (img TEXT NOT NULL, ratings TEXT NOT NULL, review TEXT NOT NULL, comparisons TEXT NOT NULL, player_json TEXT NOT NULL, ts INTEGER NOT NULL)');
 }
 
 /**
  * Inserts post data into the reviews table
+ * @param {string} img
  * @param {string} ratings 
  * @param {string} review
  * @param {string} comparisons 
  * @param {string} player_json 
  */
-function addPost(ratings, review, comparisons, player_json) {
-    DATABASE.run('INSERT INTO posts VALUES (?, ?, ?, ?, ?)', ratings, review, comparisons, player_json, (new Date()).getTime());
+
+function addPost(img, ratings, review, comparisons, player_json) {
+    DATABASE.run('INSERT INTO posts VALUES (?, ?, ?, ?, ?, ?)', img, ratings, review, comparisons, player_json, (new Date()).getTime());
 }
 
 /**

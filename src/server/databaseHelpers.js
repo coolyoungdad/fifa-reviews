@@ -26,8 +26,8 @@ function createTables() {
  * @param {string} player_json 
  */
 
-function addPost(img, ratings, review, comparisons, player_json) {
-    DATABASE.run('INSERT INTO posts VALUES (?, ?, ?, ?, ?, ?)', img, ratings, review, comparisons, player_json, (new Date()).getTime());
+function addPost(img, ratings, review, comparisons, player_json, date) {
+    DATABASE.run('INSERT INTO posts VALUES (?, ?, ?, ?, ?, ?)', img, ratings, review, comparisons, player_json, date);
 }
 
 /**

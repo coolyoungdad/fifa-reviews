@@ -14,11 +14,12 @@ module.exports = {
  * This creates a table for posts within the DB, if it does not already exist.
  */
 function createTables() {
-    DATABASE.run('CREATE TABLE IF NOT EXISTS posts (img TEXT NOT NULL, ratings TEXT NOT NULL, review TEXT NOT NULL, comparisons TEXT NOT NULL, player_json TEXT NOT NULL, ts INTEGER NOT NULL)');
+    DATABASE.run('CREATE TABLE IF NOT EXISTS players (id INTEGER PRIMARY KEY, img TEXT NOT NULL, player_json TEXT NOT NULL, ts INTEGER NOT NULL)');
+    DATABASE.run('CREATE TABLE IF NOT EXISTS reviews (id INTEGER PRIMARY KEY, player_id INTEGER, ratings TEXT NOT NULL, review TEXT NOT NULL, comparisons TEXT NOT NULL, ts INTEGER NOT NULL)');
 }
 
 /**
- * Inserts post data into the reviews table
+ * Inserts post data into the players & reviews table
  * @param {string} img
  * @param {string} ratings 
  * @param {string} review
@@ -27,7 +28,8 @@ function createTables() {
  */
 
 function addPost(img, ratings, review, comparisons, player_json, date) {
-    DATABASE.run('INSERT INTO posts VALUES (?, ?, ?, ?, ?, ?)', img, ratings, review, comparisons, player_json, date);
+    DATABASE.run('INSERT INTO players VALUES (?, ?, ?)', img, player_json, date);
+    DATABASE.run('INSERT INTO reviews VALUES (?, ?, ?, ?)', ratings, review, comparisons, date);
 }
 
 /**
@@ -38,13 +40,14 @@ function addPost(img, ratings, review, comparisons, player_json, date) {
  */
 function getPosts() {
     return new Promise((resolve, reject) => {
-        DATABASE.all('SELECT * from posts ORDER BY ts DESC', (err, rows) => {
+        DATABASE.all('SELECT reviews.ratings AS ratings, reviews.review AS review, reviews.comparisons AS comparisons, players.player_json AS player_json, players.img AS img FROM players, reviews WHERE players.id = reviews.player_id ORDER BY reviews.ts DESC', (err, rows) => {
             if (err) {
                 reject(err);
             }
             console.log(rows);
             resolve(rows.map(row => {
                 return {
+                    img: row['img'],
                     ratings: row['ratings'],
                     review: row['review'],
                     comparisons: row['comparisons'],

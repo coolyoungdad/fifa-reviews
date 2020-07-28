@@ -1,30 +1,49 @@
 const axios = require("axios");
 const cheerio = require("cheerio");
-const got = require('got');
-const request = require('request')
-const { JSDOM } = require( "jsdom" );
-// const { window } = new JSDOM( "" );
-// const $ = require( "jquery" )( window );
+const puppeteer = require('puppeteer');
 
 
-const req_url= 'https://www.futbin.com/20/player/48746/arthur-masuaku';
+let req_url = "https://www.futbin.com/20/player/45417/ronaldo";
+
 const fetchImg = async () => {
-request({uri: req_url}, function(error, response, body){
-	if(!error && response.statusCode === 200){
-    let {window} = new JSDOM(response.body);
-    window.onload = () => {
-    let img = window.document.querySelector('#Player-card')
-    console.log(img)
-    console.log(window.getComputedStyle(img, null))
-    }
-    // let text = dom.window.getComputedStyle(imgFinder, null);
-    // console.log(imgFinder)
-    // const img = dom.window.getComputedStyle(imgFinder, null).getPropertyValue('display');
-		// console.log(img);
-	}
-});
-}
+  const browser = await puppeteer.launch();
+  const page = await browser.newPage();
+  await page.goto(req_url, { waitUntil: 'domcontentloaded' });
+  const data = await page.evaluate(() => {
+    const scrapedPlayerImg = {}
+
+    //gets background image
+    const bgelement = document.body.querySelector("#Player-card");
+    const bgimage = window.getComputedStyle(bgelement).getPropertyValue("background-image");
+    scrapedPlayerImg['bgimage'] = bgimage;
+
+    //gets player image
+    const playerPicElement = document.body.querySelector("#player_pic");
+    const playerImg = playerPicElement.getAttribute('src')
+    scrapedPlayerImg['playerimage'] = playerImg;
+
+    //gets player overall rating for image
+    const playerRatImg = document.body.querySelector("#Player-card > div.pcdisplay-rat").textContent;
+    scrapedPlayerImg['playerRatImg'] = playerRatImg;
+
+    //gets player name for image
+    const playerNameCard = document.body.querySelector("#Player-card > div.pcdisplay-name").textContent;
+    scrapedPlayerImg['playerNameCard'] = playerNameCard;
+
+    //gets player position for image
+    const playerPositionCard = document.body.querySelector("#Player-card > div.pcdisplay-pos").textContent;
+    scrapedPlayerImg['playerPositionCard'] = playerPositionCard;
+
+
+    return JSON.stringify(scrapedPlayerImg);   
+  });
+
+  console.log(data)
+  await browser.close();
+};
+
 fetchImg();
+
 
 
 

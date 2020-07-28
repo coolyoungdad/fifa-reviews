@@ -11,12 +11,16 @@
     "cheerio": "^1.0.0-rc.3",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "got": "^11.5.1",
     "image-scraper": "^0.2.1",
+    "jquery": "^3.5.1",
+    "jsdom": "^16.3.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-lines-ellipsis": "^0.14.1",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.1"
+    "react-scripts": "3.4.1",
+    "request": "^2.88.2"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -3,7 +3,7 @@ const cheerio = require("cheerio");
 const puppeteer = require('puppeteer');
 
 
-let req_url = "https://www.futbin.com/20/player/45417/ronaldo";
+let req_url = "https://www.futbin.com/20/player/49680/adebayo-akinfenwa";
 
 const fetchImg = async () => {
   const browser = await puppeteer.launch();
@@ -13,14 +13,14 @@ const fetchImg = async () => {
     const scrapedPlayerImg = {}
 
     //gets background image
-    const bgelement = document.body.querySelector("#Player-card");
-    const bgimage = window.getComputedStyle(bgelement).getPropertyValue("background-image");
-    scrapedPlayerImg['bgimage'] = bgimage;
+    const bgElement = document.body.querySelector("#Player-card");
+    const bgImg = window.getComputedStyle(bgElement).getPropertyValue("background-image");
+    scrapedPlayerImg['bgimage'] = bgImg;
 
     //gets player image
     const playerPicElement = document.body.querySelector("#player_pic");
     const playerImg = playerPicElement.getAttribute('src')
-    scrapedPlayerImg['playerimage'] = playerImg;
+    scrapedPlayerImg['playerimage'] = `url("\\${playerImg}/")`;
 
     //gets player overall rating for image
     const playerRatImg = document.body.querySelector("#Player-card > div.pcdisplay-rat").textContent;

@@ -19,8 +19,9 @@ app.get('/', async function (req, res) {
 
 // POST method route
 app.post('/', async function (req, res) {
-    let playerInfo = await scraper.getResults(req.body.FutbinURL)
-    helpers.addPost(req.body.Rating, req.body.Review, req.body.Comparison, playerInfo, 'xyz', (new Date()).getTime())
+    let playerInfo = await scraper.getResults(req.body.FutbinURL) //gets player stats
+    let playerImage = await scraper.fetchImg(req.body.FutbinURL) //gets images to make player image
+    helpers.addPost(req.body.Rating, req.body.Review, req.body.Comparison, playerInfo, playerImage, (new Date()).getTime())
     res.send('POST request to the homepage') 
     console.log('posting the posts')
 })

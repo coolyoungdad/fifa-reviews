@@ -27,7 +27,7 @@ function createTables() {
  * @param {string} player_json 
  */
 
-function addPost(img, ratings, review, comparisons, player_json, date) {
+function addPost(ratings, review, comparisons, player_json, img, date) {
     DATABASE.run('INSERT INTO players VALUES (?, ?, ?)',  img, player_json, date);
     DATABASE.run('INSERT INTO reviews VALUES (?, ?, ?, ?)', ratings, review, comparisons, date);
 }
@@ -40,7 +40,7 @@ function addPost(img, ratings, review, comparisons, player_json, date) {
  */
 function getPosts() {
     return new Promise((resolve, reject) => {
-        DATABASE.all('SELECT reviews.ratings AS ratings, reviews.review AS review, reviews.comparisons AS comparisons, players.player_json AS player_json, players.img AS img', (err, rows) => {
+        DATABASE.all('SELECT reviews.ratings AS ratings, reviews.review AS review, reviews.comparisons AS comparisons, players.player_json AS player_json, players.img AS img FROM players, reviews WHERE players.id = reviews.player_id ORDER BY reviews.ts DESC', (err, rows) => {
             if (err) {
                 reject(err);
             }

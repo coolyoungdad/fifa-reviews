@@ -14,8 +14,8 @@ module.exports = {
  * This creates a table for posts within the DB, if it does not already exist.
  */
 function createTables() {
-    DATABASE.run('CREATE TABLE IF NOT EXISTS players ( img TEXT NOT NULL, player_json TEXT NOT NULL, ts INTEGER NOT NULL)');
-    DATABASE.run('CREATE TABLE IF NOT EXISTS reviews ( ratings TEXT NOT NULL, review TEXT NOT NULL, comparisons TEXT NOT NULL, ts INTEGER NOT NULL)');
+    DATABASE.run('CREATE TABLE IF NOT EXISTS players (id INTEGER PRIMARY KEY, img TEXT NOT NULL, player_json TEXT NOT NULL, ts INTEGER NOT NULL)');
+    DATABASE.run('CREATE TABLE IF NOT EXISTS reviews (id INTEGER PRIMARY KEY, player_id INTEGER, ratings TEXT NOT NULL, review TEXT NOT NULL, comparisons TEXT NOT NULL, ts INTEGER NOT NULL)');
 }
 
 /**
@@ -28,8 +28,8 @@ function createTables() {
  */
 
 function addPost(ratings, review, comparisons, player_json, img, date) {
-    DATABASE.run('INSERT INTO players VALUES (?, ?, ?)',  img, player_json, date);
-    DATABASE.run('INSERT INTO reviews VALUES (?, ?, ?, ?)', ratings, review, comparisons, date);
+    DATABASE.run('INSERT INTO players VALUES (?, ?, ?, ?)',  img, player_json, date);
+    DATABASE.run('INSERT INTO reviews VALUES (?, ?, ?, ?, ?, ?)', ratings, review, comparisons, date);
 }
 
 /**

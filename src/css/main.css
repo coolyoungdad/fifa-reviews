@@ -106,6 +106,19 @@ input {
     box-shadow: 1px 1px 10px #888 , 1px 1px 10px #888 , 1px 1px 10px #888 inset;
     padding: 3.5%;
     margin: 2% 5% 4%;
+    background-color:rgba(51, 170, 51, .1);
+    display: flex;
+}
+
+.image-wrapper{
+    flex: 1;
+    border-right: solid black 1px;
+}
+
+.player-data-wrapper{
+    flex: 3;
+    padding: 2%
+    
 }
 
 .player-name {
@@ -135,6 +148,7 @@ input {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+
 }
 
 .player-meta {
@@ -147,6 +161,17 @@ input {
 .player-stats {
     flex: 1 0 auto;
     min-width: 0;
+    text-align: center;
+    border-left: dashed 1px black;
+
+
+}
+
+.player-stats:nth-child(even){
+    background-color:rgba(51, 170, 51, .4)
+}
+.player-stats:nth-child(odd){
+    background-color:rgba(51, 170, 51, .7)
 }
 
 .hide {

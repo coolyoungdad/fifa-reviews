@@ -14,7 +14,7 @@ class Post extends React.Component {
 
     render() {
         let img = JSON.parse(this.props.img)
-        // console.log(img.playerClubImg)
+        
 
         return (
             <div className="overall-wrapper">
@@ -107,6 +107,7 @@ class Post extends React.Component {
                     </div>
                     <input type="submit" value="Expand" onClick={this.handleToggle} className={this.state.isShow ? "on" : "off"} />
                 </div>
+                <div></div>
             </div>
         )
     }

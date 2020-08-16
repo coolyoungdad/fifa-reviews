@@ -125,32 +125,35 @@ input {
 .image-wrapper {
     flex: 1;
     border-right: solid #888 1px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     position: relative;
-
 }
 
 .background-image {
-    color: #eedc82;
     background-repeat: no-repeat;
-    background-size: 221px 310px;
+    background-size: 80% ;
     background-position: center;
-    font-family: din pro condensed bold;
-    position: absolute;
-    width: 90%;
+    position: relative;
     text-transform: uppercase;
     line-height: normal!important;
 }
 
 .player-image {
     position: absolute;
+    top: 15%;
     overflow: hidden;
-    width: 65%;
-    height: auto;
+    right: 20%;
+    height: 187px;
+
     z-index: 9;
 }
+/* 
+.player-image img {
+    position: absolute;
+    max-width: 100%;
+    height: 100%;
+    vertical-align: middle;
+    border-style: none;
+} */
 
 .player-club {
     background-repeat: no-repeat;
@@ -162,6 +165,10 @@ input {
     left: 25%;
     z-index: 11;
 }
+.player-club img {
+    width: 100%;
+    height: auto;
+}
 .player-country {
     background-repeat: no-repeat;
     position: absolute;
@@ -172,6 +179,10 @@ input {
     left: 26%;
     z-index: 12;
 }
+.player-country img {
+    width: 100%;
+    height: auto;
+}
 
 .player-name-card {
     z-index: 14;
@@ -180,7 +191,9 @@ input {
     font-family: 'Hind Madurai', sans-serif;
     font-weight: 700;
     font-size: 24px;
+    left:33%;
     top: 60%;
+    align-items: center;
 }
 
 .player-rating-overall {
@@ -274,8 +287,20 @@ input {
 .player-review {
     page-break-before: always;
 }
+
+.stats-flex{
+    display:flex;
+    flex-direction: row;
+}
+
+.stats-child-flex{
+    flex: 1
+}
+
+
 .player-stats {
     font-size: 1.2vh;
+    line-height: 3.2vh;
     flex: 1 0 auto;
     min-width: 0;
     text-align: center;

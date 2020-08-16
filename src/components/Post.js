@@ -15,33 +15,62 @@ class Post extends React.Component {
     render() {
         let img = JSON.parse(this.props.img)
         let replaceImage = img.bgimage
-        let backgroundImage = replaceImage.replace("url(", '').replace(')', '').replace('"', '').replace('"','')
-        console.log(backgroundImage)
+        let backgroundImage = replaceImage.replace("url(", '').replace(')', '').replace('"', '').replace('"','')      
+        let backgroundStyle = {
+            backgroundImage: 'url(' +  backgroundImage + ')',
+            height: '100%',
+            width: '100%'
+          };
+
         
 
         return (
             <div className="overall-wrapper">
 
+                
                 <div className="image-wrapper">
-                    <img className="background-image" src={backgroundImage}/>
-                    <img className="player-image player-icon" src={`https://www.futwiz.com${img.playerimage}`}/>
-                    <div className="player-rating-overall player-icon">{img.playerRatImg}</div>
-                    <img className="player-club player-icon" src={`https://www.futwiz.com${img.playerClubImg}`}/>
-                    <img className="player-country" src={`https://www.futwiz.com${img.playerCountryImage}`}/>
-                    <div className="player-name-card player-icon">{img.playerNameCard}</div>
-                    <div className="player-position-card player-icon">{img.playerPositionCard}</div>
 
-                    <div class="card-20-headeroverlay"></div>
+                    <div  className="background-image" style={backgroundStyle}>
+
+        
+                        <img className="player-image" src={`https://www.futwiz.com${img.playerimage}`}/>
+                   
+
+                        <div className="player-rating-overall">
+                        <div>{img.playerRatImg}</div>
+                        </div>
+
+                        <div className="player-club">
+                        <img src={`https://www.futwiz.com${img.playerClubImg}`}/>
+                        </div>
+
+                        <div className="player-country">
+                        <img src={`https://www.futwiz.com${img.playerCountryImage}`}/>
+                        </div>
+
+                        <div className="player-name-card">
+                        <div>{img.playerNameCard}</div>
+                        </div>
+
+                        <div className="player-position-card player-icon">
+                        <div>{img.playerPositionCard}</div>
+                        </div>
+
+                        <div class="card-20-headeroverlay"></div>
+
+                    </div>
                
                 </div>
+
+
                 <div className="player-data-wrapper">
                     <div className="player-name">
                         <h1 className="player-name-title">{this.props.player_json.Revision} {this.props.player_json.Name}</h1>
                     </div>
 
-                    <div>
+                    {/* <div>
                     <h2>Overall Rating: {img.playerRatImg}</h2>
-                    </div>
+                    </div> */}
 
                     <div className="player-review">
                         <LinesEllipsis text='' maxLine='2' ellipsis='...' trimRight basedOn='words' className={this.state.isShow ? "show" : "hide"}/>
@@ -70,6 +99,7 @@ class Post extends React.Component {
                                 <p><span className="bold">Att. WR:</span> {this.props.player_json['Att. WR']}</p>
                                 
                             </div>
+                            
                             <div className="player-stats">
                                 <h3>Pace: {this.props.player_json.Pace}</h3>
                                 <p>Acceleration: {this.props.player_json.Acceleration}</p>
@@ -88,7 +118,7 @@ class Post extends React.Component {
                                 <h3>Passing: {this.props.player_json.Passing}</h3>
                                 <p>Vision: {this.props.player_json.Vision}</p>
                                 <p>Crossing: {this.props.player_json.Crossing}</p>
-                                <p>Fk. Accuracy: {this.props.player_json['Fk. Accuracy']}</p>
+                                <p>Fk. Accuracy: {this.props.player_json["FK. ' + 'Accuracy"]}</p>
                                 <p>Short Passing: {this.props.player_json['Short Passing']}</p>
                                 <p>Long Passing: {this.props.player_json['Long Passing']}</p>
                                 <p>Curve: {this.props.player_json.Curve}</p>

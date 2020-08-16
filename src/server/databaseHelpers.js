@@ -1,6 +1,7 @@
 const sqlite3 = require('sqlite3');
 // connect to sqlite db
 const DATABASE = new sqlite3.Database('./futdb.db');
+
 // create tables within the DB off top. first time you run it it still might fail due to the insert
 // commands running before the table's actually done being created
 createTables();
@@ -40,15 +41,11 @@ function addPlayer(img, player_json, date) {
     }
 
 
-function addReview(ratings, review, comparisons, date) {
-            return new Promise((resolve, reject) => {
-                let statement = DATABASE.prepare('INSERT INTO players VALUES ( ?, ?, ?, ?)');
-                statement.run(ratings, review, comparisons, date, function(err) { 
-                    if (err) reject(err);
-                    resolve(this.lastID);
-                })
-            })
-        }
+
+
+function addReview(player_id, ratings, review, comparisons, date) {       
+           DATABASE.run('INSERT INTO reviews VALUES (?, ?, ?, ?, ?)', player_id, ratings, review, comparisons, date);   
+}
 
         /**
  * Inserts post data into the players & reviews table

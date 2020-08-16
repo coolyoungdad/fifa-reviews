@@ -83,9 +83,7 @@ const fetchImg = async (url) => {
      return JSON.stringify(scrapedPlayerImg);  
     
   });
-  // console.log(data)
   return data
-  
   await browser.close();
 };
 

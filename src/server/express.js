@@ -21,13 +21,20 @@ app.get('/', async function (req, res) {
 app.post('/', async function (req, res) {
     let playerInfo = await scraper.getResults(req.body.FutbinURL) //gets player stats
     let playerImage = await scraper.fetchImg(req.body.FutbinURL) //gets images to make player image
-   
 
-    // helpers.addPost(req.body.Rating, req.body.Review, req.body.Comparison, playerInfo, playerImage, (new Date()).getTime())
+   
     helpers.addPlayer(playerImage, playerInfo, (new Date()).getTime())
-    helpers.addReview(req.body.Rating, req.body.Review, req.body.Comparison, (new Date()).getTime())
+    let player_id = await helpers.addPlayer()
+    
+    
+
+    await helpers.addReview(player_id, req.body.Rating, req.body.Review, req.body.Comparison, (new Date()).getTime())
     res.send('POST request to the homepage') 
     console.log('posting the posts')
 })
 
 app.listen(3001, () => console.log(`Example app listening at http://localhost:${3001}`))
+
+
+
+// helpers.addPost(req.body.Rating, req.body.Review, req.body.Comparison, playerInfo, playerImage, (new Date()).getTime())

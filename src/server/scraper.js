@@ -20,7 +20,7 @@ const fetchImg = async (url) => {
     //gets player image
     const playerPicElement = document.body.querySelector("#player_pic");
     const playerImg = playerPicElement.getAttribute('src')
-    scrapedPlayerImg['playerimage'] = `url("${playerImg}")`;
+    scrapedPlayerImg['playerimage'] = playerImg;
 
     //gets player overall rating for image
     const playerRatImg = document.body.querySelector("#Player-card > div.pcdisplay-rat").textContent;

@@ -23,12 +23,10 @@ app.post('/', async function (req, res) {
     let playerImage = await scraper.fetchImg(req.body.FutbinURL) //gets images to make player image
 
    
-    helpers.addPlayer(playerImage, playerInfo, (new Date()).getTime())
-    let player_id = await helpers.addPlayer()
-    
+    let player = helpers.addPlayer(playerImage, playerInfo, (new Date()).getTime())
     
 
-    await helpers.addReview(player_id, req.body.Rating, req.body.Review, req.body.Comparison, (new Date()).getTime())
+    await helpers.addReview(await player, req.body.Rating, req.body.Review, req.body.Comparison, (new Date()).getTime())
     res.send('POST request to the homepage') 
     console.log('posting the posts')
 })

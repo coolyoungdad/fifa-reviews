@@ -13,14 +13,14 @@ class Post extends React.Component {
       };
 
     render() {
-
-        // const Playerstats =
-        // Object.entries(this.props.player_json).map(([key,value])=>{     return (
-        // <div>{key} : {value.toString()}</div>     );   })
+        let img = JSON.parse(this.props.img)
+        // console.log(img.playerClubImg)
 
         return (
             <div className="overall-wrapper">
-                <div className="image-wrapper"></div>
+                <div className="image-wrapper">
+                    <img src={`${img.playerimage}`}/>
+                </div>
                 <div className="player-data-wrapper">
                     <div className="player-name">
                         <div></div>
@@ -42,8 +42,8 @@ class Post extends React.Component {
                             <div className="player-meta">
                                 <h3>Player Details</h3>
                                 <p className="player-main-data"><span>Version:</span> {this.props.player_json.Revision}</p>
-                                <p className="player-main-data">Club: {this.props.player_json.Club}</p>
-                                <p className="player-main-data">Nation: {this.props.player_json.Nation}</p>
+                                <p className="player-main-data">Club: <img src={`${img.playerClubImg}`}/>{this.props.player_json.Club}</p>
+                                <p className="player-main-data">Nation: <img src={`${img.playerCountryImage}`}/>{this.props.player_json.Nation}</p>
                                 <p className="player-main-data">Age: {this.props.player_json.Age}</p>
                                 <p>Height: {this.props.player_json.Height}</p>
                                 <p>Weight: {this.props.player_json.Weight}kg</p>

@@ -14,24 +14,32 @@ class Post extends React.Component {
 
     render() {
         let img = JSON.parse(this.props.img)
+        let replaceImage = img.bgimage
+        let backgroundImage = replaceImage.replace("url(", '').replace(')', '').replace('"', '').replace('"','')
+        console.log(backgroundImage)
         
 
         return (
             <div className="overall-wrapper">
                 <div className="image-wrapper">
-                    <img src={`${img.playerimage}`}/>
+                    <img className="background-image" src={backgroundImage}/>
+                    <img className="player-image player-icon" src={`https://www.futwiz.com${img.playerimage}`}/>
+                    <img className="player-club player-icon" src={`https://www.futwiz.com${img.playerClubImg}`}/>
+                    <img className="player-country" src={`https://www.futwiz.com${img.playerCountryImage}`}/>
                 </div>
                 <div className="player-data-wrapper">
                     <div className="player-name">
-                        <div></div>
-                        <h1>{this.props.player_json.Revision} {this.props.player_json.Name}</h1>
+                        <h1 className="player-name-title">{this.props.player_json.Revision} {this.props.player_json.Name}</h1>
+                    </div>
+
+                    <div>
+                    <h2>Overall Rating: {img.playerRatImg}</h2>
                     </div>
 
                     <div className="player-review">
-                        <LinesEllipsis text={this.props.review} maxLine='2' ellipsis='...' trimRight basedOn='words' className={this.state.isShow ? "hide" : "show"}/>
-                        
-                        <p className={this.state.isShow ? "show" : "hide"}>
-                        <h3>Review:</h3> {this.props.review}</p>
+                        <LinesEllipsis text='' maxLine='2' ellipsis='...' trimRight basedOn='words' className={this.state.isShow ? "show" : "hide"}/>
+                        <p className={this.state.isShow ? "show" : "hide"}></p>
+                        <p><h3>Review:</h3> {this.props.review}</p>
                         <p><h3>Comparisons:</h3> {this.props.comparisons}</p>
                         <h3 className={this.state.isShow ? "show" : "hide"}>Ratings: {this.props.ratings}</h3>
                     </div>
@@ -42,8 +50,8 @@ class Post extends React.Component {
                             <div className="player-meta">
                                 <h3>Player Details</h3>
                                 <p className="player-main-data"><span>Version:</span> {this.props.player_json.Revision}</p>
-                                <p className="player-main-data">Club: <img src={`${img.playerClubImg}`}/>{this.props.player_json.Club}</p>
-                                <p className="player-main-data">Nation: <img src={`${img.playerCountryImage}`}/>{this.props.player_json.Nation}</p>
+                                <p className="player-main-data">Club: <img className="image-icon" src={`https://www.futwiz.com${img.playerClubImg}`}/> {this.props.player_json.Club}</p>
+                                <p className="player-main-data">Nation: <img className="image-icon" src={`https://www.futwiz.com${img.playerCountryImage}`}/> {this.props.player_json.Nation}</p>
                                 <p className="player-main-data">Age: {this.props.player_json.Age}</p>
                                 <p>Height: {this.props.player_json.Height}</p>
                                 <p>Weight: {this.props.player_json.Weight}kg</p>

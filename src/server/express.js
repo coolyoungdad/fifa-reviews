@@ -20,7 +20,7 @@ app.get('/', async function (req, res) {
 // POST method route
 app.post('/', async function (req, res) {
     let playerInfo = await scraper.getResults(req.body.FutbinURL) //gets player stats
-    let playerImage = await scraper.fetchImg(req.body.FutbinURL) //gets images to make player image
+    let playerImage = await scraper.fetchImg(req.body.FutwizURL) //gets images to make player image
 
    
     let player = helpers.addPlayer(playerImage, playerInfo, (new Date()).getTime())

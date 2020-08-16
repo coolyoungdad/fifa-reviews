@@ -8,6 +8,7 @@ class Admin extends Component {
         super(props);
         this.state = {
             FutbinURL: '',
+            FutwizURL: '',
             Review: '',
             Comparison: '',
             Rating: ''
@@ -46,6 +47,18 @@ class Admin extends Component {
                             rows="10"
                             cols="30"
                             value={this.state.FutbinURL}
+                            onChange={this.handleChange}/>
+                    </label>
+
+                    <label className="label-fields">
+                        URL:<br/>
+                        <input
+                            type="text"
+                            name="FutwizURL"
+                            placeholder="FutwizURL"
+                            rows="10"
+                            cols="30"
+                            value={this.state.FutwizURL}
                             onChange={this.handleChange}/>
                     </label>
 

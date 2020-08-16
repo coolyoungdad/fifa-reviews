@@ -21,11 +21,18 @@ class Post extends React.Component {
 
         return (
             <div className="overall-wrapper">
+
                 <div className="image-wrapper">
                     <img className="background-image" src={backgroundImage}/>
                     <img className="player-image player-icon" src={`https://www.futwiz.com${img.playerimage}`}/>
+                    <div className="player-rating-overall player-icon">{img.playerRatImg}</div>
                     <img className="player-club player-icon" src={`https://www.futwiz.com${img.playerClubImg}`}/>
                     <img className="player-country" src={`https://www.futwiz.com${img.playerCountryImage}`}/>
+                    <div className="player-name-card player-icon">{img.playerNameCard}</div>
+                    <div className="player-position-card player-icon">{img.playerPositionCard}</div>
+
+                    <div class="card-20-headeroverlay"></div>
+               
                 </div>
                 <div className="player-data-wrapper">
                     <div className="player-name">
@@ -49,18 +56,18 @@ class Post extends React.Component {
                         <div className="middle-section">     
                             <div className="player-meta">
                                 <h3>Player Details</h3>
-                                <p className="player-main-data"><span>Version:</span> {this.props.player_json.Revision}</p>
-                                <p className="player-main-data">Club: <img className="image-icon" src={`https://www.futwiz.com${img.playerClubImg}`}/> {this.props.player_json.Club}</p>
-                                <p className="player-main-data">Nation: <img className="image-icon" src={`https://www.futwiz.com${img.playerCountryImage}`}/> {this.props.player_json.Nation}</p>
-                                <p className="player-main-data">Age: {this.props.player_json.Age}</p>
-                                <p>Height: {this.props.player_json.Height}</p>
-                                <p>Weight: {this.props.player_json.Weight}kg</p>
-                                <p>Skills: {this.props.player_json.Skills}*</p>
-                                <p>Weak Foot: {this.props.player_json['Weak Foot']}*</p>
-                                <p>Foot: {this.props.player_json.Foot}</p>
-                                <p>Def. WR: {this.props.player_json['Def. WR']}
+                                <p className="player-main-data"><span className="bold">Version:</span> {this.props.player_json.Revision}</p>
+                                <p className="player-main-data"><span className="bold">Club:</span> <img className="image-icon" src={`https://www.futwiz.com${img.playerClubImg}`}/> {this.props.player_json.Club}</p>
+                                <p className="player-main-data"><span className="bold">Nation:</span> <img className="image-icon" src={`https://www.futwiz.com${img.playerCountryImage}`}/> {this.props.player_json.Nation}</p>
+                                <p className="player-main-data"><span className="bold">Age:</span> {this.props.player_json.Age}</p>
+                                <p><span className="bold">Height:</span> {this.props.player_json.Height}</p>
+                                <p><span className="bold">Weight:</span> {this.props.player_json.Weight}kg</p>
+                                <p><span className="bold">Skills:</span> {this.props.player_json.Skills}*</p>
+                                <p><span className="bold">Weak Foot:</span> {this.props.player_json['Weak Foot']}*</p>
+                                <p><span className="bold">Foot:</span> {this.props.player_json.Foot}</p>
+                                <p><span className="bold">Def. WR:</span> {this.props.player_json['Def. WR']}
                                 </p>
-                                <p>Att. WR: {this.props.player_json['Att. WR']}</p>
+                                <p><span className="bold">Att. WR:</span> {this.props.player_json['Att. WR']}</p>
                                 
                             </div>
                             <div className="player-stats">

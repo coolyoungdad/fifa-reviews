@@ -26,13 +26,13 @@ const fetchImg = async (url) => {
     const playerRatImg = document.body.querySelector("#panel > div.main-content.background-dark > div > div.playerprofile-head > div.playerprofile-itemblock > div.playerprofile-item > div:nth-child(1) > div > div.card-20-rating").textContent;
     scrapedPlayerImg['playerRatImg'] = playerRatImg;
 
-    // //gets player name for image
-    // const playerNameCard = document.body.querySelector("#Player-card > div.pcdisplay-name").textContent;
-    // scrapedPlayerImg['playerNameCard'] = playerNameCard;
+    //gets player name for image
+    const playerNameCard = document.body.querySelector("#panel > div.main-content.background-dark > div > div.playerprofile-head > div.playerprofile-itemblock > div.playerprofile-item > div:nth-child(1) > div > div.card-20-name").textContent;
+    scrapedPlayerImg['playerNameCard'] = playerNameCard;
 
-    // //gets player position for image
-    // const playerPositionCard = document.body.querySelector("#Player-card > div.pcdisplay-pos").textContent;
-    // scrapedPlayerImg['playerPositionCard'] = playerPositionCard;
+    //gets player position for image
+    const playerPositionCard = document.body.querySelector("#panel > div.main-content.background-dark > div > div.playerprofile-head > div.playerprofile-itemblock > div.playerprofile-item > div:nth-child(1) > div > div.card-20-position").textContent;
+    scrapedPlayerImg['playerPositionCard'] = playerPositionCard;
 
     //gets player country image
     const playerCountry = document.body.querySelector("#panel > div.main-content.background-dark > div > div.playerprofile-head > div.playerprofile-itemblock > div.playerprofile-item > div:nth-child(1) > div > div.card-20-flag > img");

@@ -66,7 +66,7 @@ input {
 }
 .big-title,
 .big-title:visited {
-
+    
     font-weight: 200;
     text-decoration: none;
     flex: 1;
@@ -120,9 +120,12 @@ input {
 .image-wrapper {
     border-right: solid #888 1px;
     height: 100%;
+    position: relative;
 }
 
 .background-image {
+    height:100%;
+    max-height: 339px;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: 50% 50%;
@@ -132,6 +135,7 @@ input {
 }
 
 .player-image {
+    min-height: 100px;
     position: absolute;
     top: 15%;
     overflow: hidden;
@@ -231,17 +235,21 @@ input {
     text-align: left;
     color: black;
     text-transform: uppercase;
+    
 
 }
 
 .player-name-title {
-    font-weight: 200;
+    font-weight: 100;
 }
 
 .player-summary {
+    max-width: 800px;
     margin-top: -2%;
+    padding-top: 1%;
     word-spacing: 0.5em;
     font-weight: 0;
+    border-top: solid 1px black;
 }
 
 .player-main {
@@ -327,7 +335,7 @@ input {
 }
 
 .bold {
-    font-weight: 300;
+    font-weight: 400;
 }
 
 /*footer.js css*/

@@ -18,37 +18,27 @@ class Post extends React.Component {
         let backgroundImage = replaceImage.replace("url(", '').replace(')', '').replace('"', '').replace('"','')      
         let backgroundStyle = {
             backgroundImage: 'url(' +  backgroundImage + ')',
-            // height: '100%',
-            // width: '100%'
+           
           };
 
         
 
         return (
             <div className="overall-wrapper">
-
                 <div className='image-container'>
-                    <div className="image-wrapper">
+                    <div className="border-right">
                         <div  className="background-image" style={backgroundStyle}>
                             <img className="player-image" src={`https://www.futwiz.com${img.playerimage}`}/>                   
-                            <div className="player-rating-overall">
-                            <div>{img.playerRatImg}</div>
-                            </div>
-                            <div className="player-club">
-                            <img src={`https://www.futwiz.com${img.playerClubImg}`}/>
-                            </div>
-                            <div className="player-country">
-                            <img src={`https://www.futwiz.com${img.playerCountryImage}`}/>
-                            </div>
-                            <div >
+                            <div className="player-rating-overall">{img.playerRatImg}</div>
+
+
+                            <div className="player-club"><img src={`https://www.futwiz.com${img.playerClubImg}`}/></div>
+                            <div className="player-country"><img src={`https://www.futwiz.com${img.playerCountryImage}`}/></div>
                             <div className="player-name-card">{img.playerNameCard}</div>
-                            </div>
-                            <div className="player-position-card player-icon">
-                            <div>{img.playerPositionCard}</div>
-                            </div>
+                            <div className="player-position-card player-icon">{img.playerPositionCard}</div>
                             <div class="card-20-headeroverlay"></div>
-                        </div>         
-                    </div>     
+                        </div>        
+                    </div> 
                 </div>
 
 

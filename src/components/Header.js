@@ -1,20 +1,39 @@
 import React, {Component} from 'react';
 import {BrowserRouter as Router, Switch, Route, NavLink} from "react-router-dom";
 
-const Header = props => (
+class Header extends Component {
+    state = {
+        height: '64px' ,
+        boxshadow: '1px 1px 1px #f5f5f5'
+      }
+    
+      listenScrollEvent = e => {
+        if (window.scrollY > 100) {
+          this.setState({height: '72px', boxshadow: '1px 1px 20px #777'})
+        } else {
+          this.setState({height: '64px', boxshadow: '1px 1px 1px #f5f5f5'})
+        }
+      }
+    
+      componentDidMount() {
+        window.addEventListener('scroll', this.listenScrollEvent)
+      }
 
-    <header className="header-wrapper">
-        <div className="header">
-            <NavLink to="/" className="big-title">FUT REVIEWS</NavLink>
-            <p className="header-p">
-                Welcome to FUT Reviews, featuring world class reviews of EA's FIFA 20
-                Ultimate Team cards. These rankings are FUT Reviews' personal opinions, and
-                incorporate factors such as in-game stats, player information, in-game
-                performance, and meta fit. The "Big Board" will be updated to reflect new
-                content.
-            </p>
-        </div>
-    </header>
-)
+    
+
+    render() {
+
+        return (
+            <header style={{height: this.state.height}} style={{['box-shadow']: this.state.boxshadow}}>
+                <NavLink to="/" className="big-title">FUT REVIEWS</NavLink>
+                <nav>
+                    <NavLink to="/About">About</NavLink>
+                    <NavLink to="/Contact">Contact</NavLink>
+                </nav>
+            </header>
+        )
+    }
+
+}
 
 export default Header

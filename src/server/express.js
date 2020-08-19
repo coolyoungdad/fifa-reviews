@@ -10,6 +10,8 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 const PORT = process.env.PORT || 3000;
+var server_host = process.env.HOST || '0.0.0.0';
+
 
 
 
@@ -33,7 +35,11 @@ app.post('/', async function (req, res) {
     console.log('posting the posts')
 })
 
-app.listen(PORT, () => console.log(`Example app listening at http://localhost:${PORT}`))
+// app.listen(PORT, () => console.log(`Example app listening at http://localhost:${PORT}`))
+
+app.listen(server_port, server_host, function() {
+    console.log('Listening on port %d', server_port);
+});
 
 
 

@@ -19,7 +19,6 @@
 .env.production.
 
 src/css/fonts
-package-lock.json
 
 npm-debug.log*
 yarn-debug.log*

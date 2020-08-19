@@ -9,6 +9,8 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
+const PORT = process.env.PORT || 3000;
+
 
 
 // GET method route
@@ -31,7 +33,7 @@ app.post('/', async function (req, res) {
     console.log('posting the posts')
 })
 
-app.listen(3001, () => console.log(`Example app listening at http://localhost:${3001}`))
+app.listen(PORT, () => console.log(`Example app listening at http://localhost:${PORT}`))
 
 
 

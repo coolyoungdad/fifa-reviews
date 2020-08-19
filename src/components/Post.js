@@ -30,13 +30,30 @@ class Post extends React.Component {
                         <div  className="background-image" style={backgroundStyle}>
                             <img className="player-image" src={`https://www.futwiz.com${img.playerimage}`}/>                   
                             <div className="player-rating-overall">{img.playerRatImg}</div>
-
-
                             <div className="player-club"><img src={`https://www.futwiz.com${img.playerClubImg}`}/></div>
                             <div className="player-country"><img src={`https://www.futwiz.com${img.playerCountryImage}`}/></div>
                             <div className="player-name-card">{img.playerNameCard}</div>
                             <div className="player-position-card player-icon">{img.playerPositionCard}</div>
+
+                        <div className="attr-wrapper">
+                            <div className="attr-row">
+                                <div className="pace-stat">{img.playerPaceStat} <span>{img.playerPAC}</span></div>  
+                                <div className="dribble-stat">{img.playerDribblingStat} <span>{img.playerDRI}</span></div>
+                            </div>
+                            <div className="attr-row">
+                                <div className="shoot-stat">{img.playerShootingStat} <span>{img.playerSHO}</span></div>
+                                <div className="defend-stat">{img.playerDefenseStat} <span>{img.playerDEF}</span></div>
+                            </div>                           
+                            <div className="attr-row">
+                                <div className="pass-stat">{img.playerPassingStat} <span>{img.playerPAS}</span></div>
+                                <div className="physical-stat">{img.playerPhysicalStat} <span>{img.playerPHY}</span></div>
+                            </div>
+                        </div>
+
                             <div class="card-20-headeroverlay"></div>
+                            <div class="card-20-split card-20-name-split"></div>
+                            <div class="card-20-split card-20-atts-split"></div>
+                            <div class="card-20-split card-20-chem-split"></div>
                         </div>        
                     </div> 
                 </div>
@@ -152,7 +169,7 @@ class Post extends React.Component {
                             {/* {Playerstats} */}
                         </div>                   
                     </div>
-                    <input type="submit" value="Expand" onClick={this.handleToggle} className={this.state.isShow ? "on" : "off"} />
+                    <input type="submit" value="Read More" onClick={this.handleToggle} className={this.state.isShow ? "on" : "off"} className="button" />
                 </div>
                 <div></div>
             </div>

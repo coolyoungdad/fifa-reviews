@@ -8,9 +8,7 @@ class Contact extends Component {
         return (
             <div>
             
-                <p className="header-wrapper">
-               
-            </p>
+                <p className="overall-wrapper">email: alexander@bercow.com</p>
 
             </div>
 

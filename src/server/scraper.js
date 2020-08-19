@@ -44,41 +44,41 @@ const fetchImg = async (url) => {
     const playerClubImg = playerClub.getAttribute('src')
     scrapedPlayerImg['playerClubImg'] = playerClubImg;
 
-    // //gets player pace
-    // const playerPaceStat = document.body.querySelector("#Player-card > div.ovrhover > div.pcdisplay-ovr1.stat-val").textContent;
-    // scrapedPlayerImg['playerPaceStat'] = playerPaceStat;
-    // const playerPAC = document.body.querySelector("#Player-card > div.ovrhover > div.pcdisplay-card-pace").textContent;
-    // scrapedPlayerImg['playerPAC'] = playerPAC;
+    //gets player pace
+    const playerPaceStat = document.body.querySelector("#panel > div.main-content.background-dark > div > div.playerprofile-head > div.playerprofile-itemblock > div.playerprofile-item > div:nth-child(1) > div > div.card-20-atts > div.card-20-atts1 > div.card-20-attnum.card-20-attnum1").textContent;
+    scrapedPlayerImg['playerPaceStat'] = playerPaceStat;
+    const playerPAC = document.body.querySelector("#panel > div.main-content.background-dark > div > div.playerprofile-head > div.playerprofile-itemblock > div.playerprofile-item > div:nth-child(1) > div > div.card-20-atts > div.card-20-atts1 > div.card-20-attlabel.card-20-attlabel1").textContent;
+    scrapedPlayerImg['playerPAC'] = playerPAC;
 
-    // //gets player shooting
-    // const playerShootingStat = document.body.querySelector("#Player-card > div.ovrhover > div.pcdisplay-ovr2.stat-val").textContent;
-    // scrapedPlayerImg['playerShootingStat'] = playerShootingStat;
-    // const playerSHO = document.body.querySelector("#Player-card > div.ovrhover > div.pcdisplay-card-shoo").textContent;
-    // scrapedPlayerImg['playerSHO'] = playerSHO;
+    //gets player shooting
+    const playerShootingStat = document.body.querySelector("#panel > div.main-content.background-dark > div > div.playerprofile-head > div.playerprofile-itemblock > div.playerprofile-item > div:nth-child(1) > div > div.card-20-atts > div.card-20-atts2 > div.card-20-attnum.card-20-attnum2").textContent;
+    scrapedPlayerImg['playerShootingStat'] = playerShootingStat;
+    const playerSHO = document.body.querySelector("#panel > div.main-content.background-dark > div > div.playerprofile-head > div.playerprofile-itemblock > div.playerprofile-item > div:nth-child(1) > div > div.card-20-atts > div.card-20-atts2 > div.card-20-attlabel.card-20-attlabel2").textContent;
+    scrapedPlayerImg['playerSHO'] = playerSHO;
 
-    // //gets player passing
-    // const playerPassingStat = document.body.querySelector("#Player-card > div.ovrhover > div.pcdisplay-ovr3.stat-val").textContent;
-    // scrapedPlayerImg['playerPassingStat'] = playerPassingStat;
-    // const playerPAS = document.body.querySelector("#Player-card > div.ovrhover > div.pcdisplay-card-pas").textContent;
-    // scrapedPlayerImg['playerPAS'] = playerPAS;
+    //gets player passing
+    const playerPassingStat = document.body.querySelector("#panel > div.main-content.background-dark > div > div.playerprofile-head > div.playerprofile-itemblock > div.playerprofile-item > div:nth-child(1) > div > div.card-20-atts > div.card-20-atts3 > div.card-20-attnum.card-20-attnum3").textContent;
+    scrapedPlayerImg['playerPassingStat'] = playerPassingStat;
+    const playerPAS = document.body.querySelector("#panel > div.main-content.background-dark > div > div.playerprofile-head > div.playerprofile-itemblock > div.playerprofile-item > div:nth-child(1) > div > div.card-20-atts > div.card-20-atts3 > div.card-20-attlabel.card-20-attlabel3").textContent;
+    scrapedPlayerImg['playerPAS'] = playerPAS;
 
-    //  //gets player dribbling
-    //  const playerDribblingStat = document.body.querySelector("#Player-card > div.ovrhover > div.pcdisplay-ovr4.stat-val").textContent;
-    //  scrapedPlayerImg['playerDribblingStat'] = playerDribblingStat;
-    //  const playerDRI = document.body.querySelector("#Player-card > div.ovrhover > div.pcdisplay-card-dri").textContent;
-    //  scrapedPlayerImg['playerDRI'] = playerDRI;
+     //gets player dribbling
+     const playerDribblingStat = document.body.querySelector("#panel > div.main-content.background-dark > div > div.playerprofile-head > div.playerprofile-itemblock > div.playerprofile-item > div:nth-child(1) > div > div.card-20-atts > div.card-20-atts1 > div.card-20-attnum.card-20-attnum4").textContent;
+     scrapedPlayerImg['playerDribblingStat'] = playerDribblingStat;
+     const playerDRI = document.body.querySelector("#panel > div.main-content.background-dark > div > div.playerprofile-head > div.playerprofile-itemblock > div.playerprofile-item > div:nth-child(1) > div > div.card-20-atts > div.card-20-atts1 > div.card-20-attlabel.card-20-attlabel4").textContent;
+     scrapedPlayerImg['playerDRI'] = playerDRI;
 
-    //   //gets player defense
-    // const playerDefenseStat = document.body.querySelector("#Player-card > div.ovrhover > div.pcdisplay-ovr5.stat-val").textContent;
-    // scrapedPlayerImg['playerDefenseStat'] = playerDefenseStat;
-    // const playerDEF = document.body.querySelector("#Player-card > div.ovrhover > div.pcdisplay-card-def").textContent;
-    // scrapedPlayerImg['playerDEF'] = playerDEF;
+      //gets player defense
+    const playerDefenseStat = document.body.querySelector("#panel > div.main-content.background-dark > div > div.playerprofile-head > div.playerprofile-itemblock > div.playerprofile-item > div:nth-child(1) > div > div.card-20-atts > div.card-20-atts2 > div.card-20-attnum.card-20-attnum5").textContent;
+    scrapedPlayerImg['playerDefenseStat'] = playerDefenseStat;
+    const playerDEF = document.body.querySelector("#panel > div.main-content.background-dark > div > div.playerprofile-head > div.playerprofile-itemblock > div.playerprofile-item > div:nth-child(1) > div > div.card-20-atts > div.card-20-atts2 > div.card-20-attlabel.card-20-attlabel5").textContent;
+    scrapedPlayerImg['playerDEF'] = playerDEF;
 
-    //  //gets player physical
-    //  const playerPhysicalStat = document.body.querySelector("#Player-card > div.ovrhover > div.pcdisplay-ovr6.stat-val").textContent;
-    //  scrapedPlayerImg['playerPhysicalStat'] = playerPhysicalStat;
-    //  const playerPHY = document.body.querySelector("#Player-card > div.ovrhover > div.pcdisplay-card-phy").textContent;
-    //  scrapedPlayerImg['playerPHY'] = playerPHY;
+     //gets player physical
+     const playerPhysicalStat = document.body.querySelector("#panel > div.main-content.background-dark > div > div.playerprofile-head > div.playerprofile-itemblock > div.playerprofile-item > div:nth-child(1) > div > div.card-20-atts > div.card-20-atts3 > div.card-20-attnum.card-20-attnum6").textContent;
+     scrapedPlayerImg['playerPhysicalStat'] = playerPhysicalStat;
+     const playerPHY = document.body.querySelector("#panel > div.main-content.background-dark > div > div.playerprofile-head > div.playerprofile-itemblock > div.playerprofile-item > div:nth-child(1) > div > div.card-20-atts > div.card-20-atts3 > div.card-20-attlabel.card-20-attlabel6").textContent;
+     scrapedPlayerImg['playerPHY'] = playerPHY;
     
      return JSON.stringify(scrapedPlayerImg);  
     

@@ -1,20 +1,16 @@
-@import url( 'https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap');
-@import url( 'https://fonts.googleapis.com/css2?family=Lato&display=swap');
-@import url( 'https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
-@import url( 'https://fonts.googleapis.com/css2?family=Hind:wght@300;600;700&display=swap');
-@import url( 'https://fonts.googleapis.com/css2?family=Modak&display=swap');
-@import url( 'https://fonts.googleapis.com/css2?family=Monoton&display=swap');
-@import url( 'https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
-@import url( 'https://fonts.googleapis.com/css2?family=Dosis:wght@800&display=swap');
-@import url( 'https://fonts.googleapis.com/css2?family=Raleway&display=swap');
-@import url( 'https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
 @import url( 'https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+@font-face {
+    font-family: 'gligoth';
+    src: url('./fonts/gligoth.TTF');
+}
+@font-face {
+    font-family: 'DINPro-Light';
+    src: url('./fonts/dinpro-cufonfonts-webfont/DINPro-Light-tr.woff');
+}
 
 body {
     font-family: 'IBM Plex Sans', sans-serif;
-
     background-color: #f5f5f5;
-
 }
 /*global css*/
 /* -------- */
@@ -144,67 +140,71 @@ header a:visited {
     flex: 1;
 
 }
-.border-right{
+.border-right {
     border-right: solid #888 1px;
     height: 100%;
 }
 
 .background-image {
-
     height: 100%;
     max-height: 339px;
     min-width: 285px;
     background-size: contain;
+    background-size: 221px 310px;
     background-repeat: no-repeat;
     background-position: 50% 50%;
     position: relative;
     text-transform: uppercase;
     line-height: normal!important;
     display: flex;
+    color: rgba(0, 0, 0, 0.75);
 
 }
 
 .player-image {
     z-index: 9;
-    height: 69%;
+    height: 62%;
     position: absolute;
     margin-left: auto;
     margin-right: auto;
-    top: 45px;
+    top: 55px;
     left: 0;
     right: 0;
     text-align: center;
+    width: 159px;
+    height: 187px;
 }
 
 .player-rating-overall {
-    font-weight: 700;
-    font-size: 12px;
-
     z-index: 14;
     position: absolute;
     margin-left: auto;
     margin-right: auto;
+    width: 37px;
+    top: 55px;
     left: 0;
     right: 100px;
     text-align: center;
-    top: 45px;
-    font-weight: 700;
+    font-weight: 400;
     font-size: 30px;
+    font-family: 'gligoth', Fallback, sans-serif;
+
 }
 
 .player-position-card {
-    font-weight: 700;
-    font-size: 12px;
     z-index: 14;
     position: absolute;
     margin-left: auto;
     margin-right: auto;
+    width: 37px;
+    top: 87px;
     left: 0;
     right: 100px;
     text-align: center;
-    top: 75px;
-    font-weight: 700;
-    font-size: 20px;
+    font-weight: 400;
+    font-size: 16px;
+    font-family: 'gligoth', Fallback, sans-serif;
+
 }
 
 .player-club {
@@ -214,8 +214,9 @@ header a:visited {
     margin-right: auto;
     left: 0;
     right: 100px;
-    top: 130px;
-    width: 10%;
+    top: 133px;
+    width: 9%;
+    width: 32px;
     height: auto;
 
     overflow: hidden;
@@ -232,8 +233,10 @@ header a:visited {
     margin-right: auto;
     left: 0;
     right: 100px;
-    top: 105px;
-    width: 10%;
+    top: 111px;
+    width: 9%;
+    width: 25px;
+
     height: auto;
 
     overflow: hidden;
@@ -252,41 +255,39 @@ header a:visited {
     left: 0;
     right: 0;
     text-align: center;
-    top: 190px;
+    top: 175px;
     font-weight: 700;
-    font-size: 20px;
+    font-size: 24px;
+    font-family: 'gligoth', Fallback, sans-serif;
 }
 
-.player-rating-overall {
-    font-weight: 700;
-    font-size: 12px;
-
+.attr-wrapper {
     z-index: 14;
     position: absolute;
     margin-left: auto;
     margin-right: auto;
     left: 0;
-    right: 100px;
+    right: 0;
     text-align: center;
-    top: 45px;
+    top: 208px;
+    max-width: 113px;
     font-weight: 700;
-    font-size: 30px;
+    font-size: 18px;
+    font-family: 'gligoth', Fallback, sans-serif;
+}
+.attr-row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.5s;
 }
 
-.player-position-card {
-    font-weight: 700;
-    font-size: 12px;
+.attr-row span {
+    font-family: 'DINPro-Light', sans-serif;
+    font-size: 14px;
 
-    z-index: 14;
-    position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 100px;
-    text-align: center;
-    top: 75px;
-    font-weight: 700;
-    font-size: 20px;
 }
 
 .card-20-headeroverlay {
@@ -303,10 +304,42 @@ header a:visited {
     position: absolute;
     left: 24%;
     top: 19px;
-    opacity: 0.7;
+    opacity: 0.4;
     z-index: 10;
     background: linear-gradient(to bottom,rgba(234,246,229,0) 8%,rgba(234,246,229,1) 29%,rgba(234,246,229,1) 50%,rgba(234,246,229,1) 81%,rgba(234,246,229,0) 100%);
     display: block;
+}
+.card-20-name-split {
+    height: 1px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    width: 120px;
+    border-bottom: 1px solid;
+    position: absolute;
+    top: 202px;
+}
+
+.card-20-atts-split {
+    height: 60px;
+    width: 1px;
+    left: 142px;
+    border-left: 1px solid;
+    position: absolute;
+    top: 210px;
+}
+
+.card-20-chem-split {
+    height: 1px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    width: 30px;
+    border-bottom: 1px solid;
+    position: absolute;
+    top: 280px;
 }
 
 .image-icon {
@@ -410,7 +443,29 @@ header a:visited {
     background-color: rgba(232, 232, 232, 0.6);
 }
 
-.player-stats-column {}
+.button {
+    box-shadow: inset 0 1px 0 0 #ffffff;
+    background: linear-gradient(to bottom, #f9f9f9 5%, #e9e9e9 100%);
+    background-color: #f9f9f9;
+    border-radius: 6px;
+    border: 1px solid #dcdcdc;
+    display: inline-block;
+    cursor: pointer;
+    color: #666666;
+    font-family: Arial;
+    font-size: 0.7vw;
+    font-weight: bold;
+    text-decoration: none;
+    text-shadow: 0 1px 0 #ffffff;
+}
+.button:hover {
+    background: linear-gradient(to bottom, #e9e9e9 5%, #f9f9f9 100%);
+    background-color: #e9e9e9;
+}
+.button:active {
+    position: relative;
+    top: 1px;
+}
 
 .hide {
     display: none;

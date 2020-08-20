@@ -23,7 +23,8 @@
         "react-router-dom": "^5.2.0",
         "react-scripts": "3.4.1",
         "request": "^2.88.2",
-        "serve": "^11.3.2"
+        "serve": "^11.3.2",
+        "sqlite3": "^4.2.0"
     },
     "engines": {
         "node": "12.4.0",
@@ -53,7 +54,6 @@
         ]
     },
     "devDependencies": {
-        "sqlite3": "^4.2.0"
     },
     "proxy": "http://localhost:3001"
 }

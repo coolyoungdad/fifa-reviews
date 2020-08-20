@@ -31,7 +31,7 @@ class Admin extends Component {
         // console.log(APP_HOST)
         event.preventDefault();
         await axios
-            .post('https://futreviews.herokuapp.com/', this.state)
+            .post('api/', this.state)
             .then(res => {
                 console.log(res);
                 console.log(res.data);

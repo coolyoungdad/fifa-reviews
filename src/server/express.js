@@ -13,13 +13,13 @@ app.use(bodyParser.json())
 const PORT = process.env.PORT || 3001;
 
 // GET method route
-app.get('/', async function (req, res) {
+app.get('api/', async function (req, res) {
     res.send(await helpers.getPosts())
     console.log('getting the posts')
 })
 
 // POST method route
-app.post('/', async function (req, res) {
+app.post('api/', async function (req, res) {
     let playerInfo = await scraper.getResults(req.body.FutbinURL) //gets player stats
     let playerImage = await scraper.fetchImg(req.body.FutwizURL) //gets images to make player image 
     let player = helpers.addPlayer(playerImage, playerInfo, (new Date()).getTime())

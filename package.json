@@ -35,7 +35,7 @@
         "build": "react-scripts build",
         "test": "react-scripts test --env=jsdom",
         "eject": "react-scripts eject",
-        "heroku-postbuild": "npm run build"
+        "heroku-postbuild": "node src/server/express.js"
     },
     "eslintConfig": {
         "extends": "react-app"
@@ -48,5 +48,6 @@
     },
     "devDependencies": {
         "sqlite3": "^4.2.0"
-    }
+    },
+    "proxy": "http://localhost:3001"
 }

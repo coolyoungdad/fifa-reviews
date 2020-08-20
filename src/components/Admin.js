@@ -24,9 +24,10 @@ class Admin extends Component {
     }
 
     handleSubmit = async(event) => {
+        const PORT = process.env.PORT
         event.preventDefault();
         await axios
-            .post("http://futreviews.herokuapp.com/", this.state)
+            .post(PORT, this.state)
             .then(res => {
                 console.log(res);
                 console.log(res.data);

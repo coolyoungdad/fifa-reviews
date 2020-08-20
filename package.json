@@ -1,58 +1,52 @@
 {
-  "name": "futreviews",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "axios": "^0.19.2",
-    "body-parser": "^1.19.0",
-    "cheerio": "^1.0.0-rc.3",
-    "cors": "^2.8.5",
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "got": "^11.5.1",
-    "image-scraper": "^0.2.1",
-    "jquery": "^3.5.1",
-    "jsdom": "^16.3.0",
-    "puppeteer": "^5.2.1",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-lines-ellipsis": "^0.14.1",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.1",
-    "request": "^2.88.2",
-    "serve": "^11.3.2"
-  },
-  "engines": {
-    "node": "12.4.0",
-    "npm": "6.9.0"
-  },
-  "scripts": {
-    "dev": "react-scripts start",
-    "start": "npm run build",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "heroku-postbuild": "npm run build"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "sqlite3": "^4.2.0"
-  }
+    "name": "futreviews",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "@testing-library/jest-dom": "^4.2.4",
+        "@testing-library/react": "^9.3.2",
+        "@testing-library/user-event": "^7.1.2",
+        "axios": "^0.19.2",
+        "body-parser": "^1.19.0",
+        "cheerio": "^1.0.0-rc.3",
+        "cors": "^2.8.5",
+        "dotenv": "^8.2.0",
+        "express": "^4.17.1",
+        "got": "^11.5.1",
+        "image-scraper": "^0.2.1",
+        "jquery": "^3.5.1",
+        "jsdom": "^16.3.0",
+        "puppeteer": "^5.2.1",
+        "react": "^16.13.1",
+        "react-dom": "^16.13.1",
+        "react-lines-ellipsis": "^0.14.1",
+        "react-router-dom": "^5.2.0",
+        "react-scripts": "3.4.1",
+        "request": "^2.88.2",
+        "serve": "^11.3.2"
+    },
+    "engines": {
+        "node": "12.4.0",
+        "npm": "6.9.0"
+    },
+    "scripts": {
+        "dev": "react-scripts start",
+        "start": "serve -s build",
+        "build": "react-scripts build",
+        "test": "react-scripts test --env=jsdom",
+        "eject": "react-scripts eject",
+        "heroku-postbuild": "npm run build"
+    },
+    "eslintConfig": {
+        "extends": "react-app"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%", "not dead", "not op_mini all"
+        ],
+        "development": ["last 1 chrome version", "last 1 firefox version", "last 1 safari version"]
+    },
+    "devDependencies": {
+        "sqlite3": "^4.2.0"
+    }
 }

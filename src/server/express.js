@@ -12,12 +12,6 @@ app.use(bodyParser.json())
 
 const PORT = process.env.PORT || 3001;
 
-// const instance = axios.create({
-//     baseURL: process.env.REACT_APP_APP_HOST,
-//     timeout: 1000,
-//   });
-
-
 // GET method route
 app.get('/', async function (req, res) {
     res.send(await helpers.getPosts())
@@ -27,12 +21,8 @@ app.get('/', async function (req, res) {
 // POST method route
 app.post('/', async function (req, res) {
     let playerInfo = await scraper.getResults(req.body.FutbinURL) //gets player stats
-    let playerImage = await scraper.fetchImg(req.body.FutwizURL) //gets images to make player image
-
-   
+    let playerImage = await scraper.fetchImg(req.body.FutwizURL) //gets images to make player image 
     let player = helpers.addPlayer(playerImage, playerInfo, (new Date()).getTime())
-    
-
     await helpers.addReview(await player, req.body.Rating, req.body.Review, req.body.Comparison, (new Date()).getTime())
     res.send('POST request to the homepage') 
     console.log('posting the posts')

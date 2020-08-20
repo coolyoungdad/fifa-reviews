@@ -5,6 +5,7 @@ var scraper = require('./scraper')
 var bodyParser = require('body-parser')
 var cors = require('cors')
 var axios = require('axios')
+var path = require('path');
 
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -27,5 +28,12 @@ app.post('/api', async function (req, res) {
     res.send('POST request to the homepage') 
     console.log('posting the posts')
 })
+
+app.use(express.static(path.join(__dirname, '/../../build')));
+
+
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
 
 app.listen(PORT, () => console.log(`Example app listening at http://localhost:${PORT}`))

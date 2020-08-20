@@ -11,10 +11,10 @@ function PostsContainer() {
     const [posts, setPosts] = useState([]);
     useEffect(() => {
         async function fetchData() {
-            // const APP_HOST = process.env.REACT_APP_APP_HOST;
-            // console.log(APP_HOST)
+            const APP_HOST = process.env.REACT_APP_APP_HOST;
+            console.log(APP_HOST)
 
-            const result = await Axios.get('http://localhost:3001');
+            const result = await Axios.get(APP_HOST);
             setPosts(result.data.map((data, i) => {
                 console.log(data)
                 console.log(result)

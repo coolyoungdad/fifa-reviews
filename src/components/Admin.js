@@ -4,6 +4,8 @@ import {BrowserRouter as Router, Switch, Route, NavLink} from "react-router-dom"
 
 class Admin extends Component {
 
+    
+
     constructor(props) {
         super(props);
         this.state = {
@@ -11,7 +13,7 @@ class Admin extends Component {
             FutwizURL: '',
             Review: '',
             Comparison: '',
-            Rating: ''
+            Rating: '',
         }
     }
 
@@ -22,9 +24,10 @@ class Admin extends Component {
     }
 
     handleSubmit = async(event) => {
+        const PORT = process.env.PORT || 3000;
         event.preventDefault();
         await axios
-            .post(`http://localhost:3001`, this.state)
+            .post(`http://url:3001`, this.state)
             .then(res => {
                 console.log(res);
                 console.log(res.data);
@@ -39,7 +42,7 @@ class Admin extends Component {
                     <h1>Write a review!</h1>
 
                     <label className="label-fields">
-                        URL:<br/>
+                        Futbin:<br/>
                         <input
                             type="text"
                             name="FutbinURL"
@@ -51,7 +54,7 @@ class Admin extends Component {
                     </label>
 
                     <label className="label-fields">
-                        URL:<br/>
+                        Futwiz:<br/>
                         <input
                             type="text"
                             name="FutwizURL"

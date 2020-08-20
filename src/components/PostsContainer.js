@@ -9,8 +9,9 @@ function PostsContainer() {
     const [posts, setPosts] = useState([]);
     useEffect(() => {
         async function fetchData() {
-            const PORT = process.env.PORT;
-            const result = await Axios.get(PORT);
+            baseUrl = process.env.baseURL || "http://localhost:3001"
+
+            const result = await Axios.get(baseUrl);
             setPosts(result.data.map((data, i) => {
                 console.log(data)
                 console.log(result)

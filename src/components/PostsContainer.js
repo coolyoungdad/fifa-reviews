@@ -14,7 +14,7 @@ function PostsContainer() {
             const APP_HOST = process.env.REACT_APP_APP_HOST;
             console.log(APP_HOST)
 
-            const result = await Axios.get(APP_HOST);
+            const result = await Axios.get('http://futreviews.herokuapp.com');
             setPosts(result.data.map((data, i) => {
                 console.log(data)
                 console.log(result)

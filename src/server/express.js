@@ -12,11 +12,10 @@ app.use(bodyParser.json())
 
 const PORT = process.env.PORT || 3001;
 
-const instance = axios.create({
-    baseURL: process.env.APP_HOST,
-    timeout: 1000,
-  });
-
+// const instance = axios.create({
+//     baseURL: process.env.APP_HOST,
+//     timeout: 1000,
+//   });
 
 
 // GET method route
@@ -39,12 +38,4 @@ app.post('/', async function (req, res) {
     console.log('posting the posts')
 })
 
-// app.listen(PORT, () => console.log(`Example app listening at http://localhost:${PORT}`))
-
-app.listen(PORT, function() {
-    console.log('Listening');
-});
-
-
-
-// helpers.addPost(req.body.Rating, req.body.Review, req.body.Comparison, playerInfo, playerImage, (new Date()).getTime())
+app.listen(PORT, () => console.log(`Example app listening at http://localhost:${PORT}`))

@@ -1,6 +1,9 @@
 import React, {Component} from "react";
 import axios from 'axios'
 import {BrowserRouter as Router, Switch, Route, NavLink} from "react-router-dom";
+require('dotenv').config()
+
+
 
 class Admin extends Component {
 
@@ -24,10 +27,11 @@ class Admin extends Component {
     }
 
     handleSubmit = async(event) => {
-
+        const APP_HOST = process.env.REACT_APP_APP_HOST;
+        console.log(APP_HOST)
         event.preventDefault();
         await axios
-            .post("http://fut.reviews", this.state)
+            .post(APP_HOST, this.state)
             .then(res => {
                 console.log(res);
                 console.log(res.data);

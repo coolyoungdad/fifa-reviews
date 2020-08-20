@@ -27,7 +27,7 @@ class Admin extends Component {
         const PORT = process.env.PORT || 3000;
         event.preventDefault();
         await axios
-            .post(`http://url:3001`, this.state)
+            .post(`https://url:3001`, this.state)
             .then(res => {
                 console.log(res);
                 console.log(res.data);

@@ -4,6 +4,7 @@ var helpers = require('./databaseHelpers')
 var scraper = require('./scraper')
 var bodyParser = require('body-parser')
 var cors = require('cors')
+var axios = require('axios')
 
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }))

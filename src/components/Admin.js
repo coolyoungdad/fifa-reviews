@@ -24,11 +24,10 @@ class Admin extends Component {
     }
 
     handleSubmit = async(event) => {
-        baseUrl = process.env.baseURL || "http://localhost:3001"
 
         event.preventDefault();
         await axios
-            .post(baseUrl, this.state)
+            .post("http://localhost:3001", this.state)
             .then(res => {
                 console.log(res);
                 console.log(res.data);

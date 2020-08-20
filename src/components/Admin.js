@@ -31,7 +31,7 @@ class Admin extends Component {
         console.log(APP_HOST)
         event.preventDefault();
         await axios
-            .post(APP_HOST, this.state)
+            .post('http://localhost:3001', this.state)
             .then(res => {
                 console.log(res);
                 console.log(res.data);

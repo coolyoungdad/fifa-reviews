@@ -9,7 +9,7 @@ function PostsContainer() {
     const [posts, setPosts] = useState([]);
     useEffect(() => {
         async function fetchData() {
-            const result = await Axios.get('https://url:3001');
+            const result = await Axios.get('/');
             setPosts(result.data.map((data, i) => {
                 console.log(data)
                 console.log(result)

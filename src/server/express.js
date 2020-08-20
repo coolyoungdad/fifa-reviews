@@ -9,8 +9,7 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
-const PORT = process.env.PORT || 3000;
-var server_host = process.env.HOST || '0.0.0.0';
+const PORT = process.env.PORT || 3001;
 
 
 
@@ -37,8 +36,8 @@ app.post('/', async function (req, res) {
 
 // app.listen(PORT, () => console.log(`Example app listening at http://localhost:${PORT}`))
 
-app.listen(server_port, server_host, function() {
-    console.log('Listening on port %d', server_port);
+app.listen(PORT, function() {
+    console.log('Listening');
 });
 
 

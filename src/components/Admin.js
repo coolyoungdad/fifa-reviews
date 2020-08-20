@@ -27,8 +27,8 @@ class Admin extends Component {
     }
 
     handleSubmit = async(event) => {
-        const APP_HOST = process.env.REACT_APP_APP_HOST;
-        console.log(APP_HOST)
+        // const APP_HOST = process.env.REACT_APP_APP_HOST;
+        // console.log(APP_HOST)
         event.preventDefault();
         await axios
             .post('http://localhost:3001', this.state)

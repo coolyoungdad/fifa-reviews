@@ -9,7 +9,7 @@ function PostsContainer() {
     const [posts, setPosts] = useState([]);
     useEffect(() => {
         async function fetchData() {
-            const result = await Axios.get("https://futreviews.herokuapp.com");
+            const result = await Axios.get("http://fut.reviews");
             setPosts(result.data.map((data, i) => {
                 console.log(data)
                 console.log(result)

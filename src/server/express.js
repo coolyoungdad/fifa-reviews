@@ -12,6 +12,10 @@ app.use(bodyParser.json())
 
 const PORT = process.env.PORT || 3001;
 
+const instance = axios.create({
+    baseURL: process.env.APP_HOST,
+    timeout: 1000,
+  });
 
 
 

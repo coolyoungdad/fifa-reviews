@@ -38,9 +38,9 @@ function getPosts() {
 
 function addPlayer(img, player_json, date) {
         return new Promise((resolve, reject) => {
-        pool.query("INSERT INTO players VALUES ($1, $2, $3) RETURNING *", [img, player_json, date], (error, results) => {
+        pool.query("INSERT INTO players(img, player_json, ts) VALUES($1, $2, $3) RETURNING *", [img, player_json, date], (error, results) => {
             if (error) {
-              throw error
+                reject(error);
             }
             console.log(`player data added to players`)
             resolve(results);
@@ -51,9 +51,9 @@ function addPlayer(img, player_json, date) {
 
 function addReview(player_id, ratings, review, comparisons, date) {      
     return new Promise((resolve, reject) => { 
-    pool.query("INSERT INTO reviews VALUES ($1, $2, $3, $4, $5)", [player_id, ratings, review, comparisons, date], (error, results) => {
+    pool.query("INSERT INTO reviews (player_id, ratings, review, comparisons, ts) VALUES ($1, $2, $3, $4, $5)", [player_id, ratings, review, comparisons, date], (error, results) => {
         if (error) {
-          throw error
+            reject(error);
         }
         console.log(`review data added to reviews`)
         resolve(results);

@@ -83,7 +83,6 @@ const fetchImg = async (url) => {
      return JSON.stringify(scrapedPlayerImg);      
   });
   return data
-  console.log(data)
   await browser.close();
 };
 
@@ -122,7 +121,6 @@ const getResults = async (url) => {
     scrapedPlayerInfo[statName] = statVal;
   })
  
- console.log(JSON.stringify(scrapedPlayerInfo) + " " + "This is from line 126 scraper.js");
  return JSON.stringify(scrapedPlayerInfo); 
 };
 

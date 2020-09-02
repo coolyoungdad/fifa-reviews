@@ -1,6 +1,6 @@
 var express = require('express')
 var app = express()
-var helpers = require('./databaseHelpers')
+var helpers = require('./databaseHelpers-postgres') //was ./databaseHelpers before
 var scraper = require('./scraper')
 var bodyParser = require('body-parser')
 var cors = require('cors')
@@ -23,8 +23,8 @@ app.get('/api', async function (req, res) {
 app.post('/api', async function (req, res) {
     let playerInfo = await scraper.getResults(req.body.FutbinURL) //gets player stats
     let playerImage = await scraper.fetchImg(req.body.FutwizURL) //gets images to make player image 
-    let player = helpers.addPlayer(playerImage, playerInfo, (new Date()).getTime())
-    await helpers.addReview(await player, req.body.Rating, req.body.Review, req.body.Comparison, (new Date()).getTime())
+    let player =  helpers.addPlayer(playerImage, playerInfo, (new Date()).getTime())
+    await helpers.addReview(await player.rows[0], req.body.Rating, req.body.Review, req.body.Comparison, (new Date()).getTime())
     res.send('POST request to the homepage') 
     console.log('posting the posts')
 })

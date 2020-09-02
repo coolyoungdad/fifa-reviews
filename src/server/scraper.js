@@ -18,7 +18,7 @@ const fetchImg = async (url) => {
     scrapedPlayerImg['bgimage'] = bgImg;
 
     //gets player image
-    const playerPicElement = document.body.querySelector("#panel > div.main-content.background-dark > div > div.playerprofile-head > div.playerprofile-itemblock > div.playerprofile-item > div:nth-child(1) > div > div.card-20-face-alt > img");
+    const playerPicElement = document.body.querySelector("#panel > div.main-content.background-dark > div > div:nth-child(2) > div > div.playerprofile-item > div:nth-child(1) > div > div.card-20-face > div > img");
     const playerImg = playerPicElement.getAttribute('src')
     scrapedPlayerImg['playerimage'] = playerImg;
 
@@ -35,12 +35,12 @@ const fetchImg = async (url) => {
     scrapedPlayerImg['playerPositionCard'] = playerPositionCard;
 
     //gets player country image
-    const playerCountry = document.body.querySelector("#panel > div.main-content.background-dark > div > div.playerprofile-head > div.playerprofile-itemblock > div.playerprofile-item > div:nth-child(1) > div > div.card-20-flag > img");
+    const playerCountry = document.body.querySelector("#panel > div.main-content.background-dark > div > div:nth-child(2) > div > div.playerprofile-item > div:nth-child(1) > div > div.card-20-flag > img");
     const playerCountryImg = playerCountry.getAttribute('src')
     scrapedPlayerImg['playerCountryImage'] = playerCountryImg;
 
     //gets player club image
-    const playerClub = document.body.querySelector("#panel > div.main-content.background-dark > div > div.playerprofile-head > div.playerprofile-itemblock > div.playerprofile-item > div:nth-child(1) > div > div.card-20-badge > img");
+    const playerClub = document.body.querySelector("#panel > div.main-content.background-dark > div > div:nth-child(2) > div > div.playerprofile-item > div:nth-child(1) > div > div.card-20-badge > img");
     const playerClubImg = playerClub.getAttribute('src')
     scrapedPlayerImg['playerClubImg'] = playerClubImg;
 
@@ -80,10 +80,10 @@ const fetchImg = async (url) => {
      const playerPHY = document.body.querySelector("#panel > div.main-content.background-dark > div > div.playerprofile-head > div.playerprofile-itemblock > div.playerprofile-item > div:nth-child(1) > div > div.card-20-atts > div.card-20-atts3 > div.card-20-attlabel.card-20-attlabel6").textContent;
      scrapedPlayerImg['playerPHY'] = playerPHY;
     
-     return JSON.stringify(scrapedPlayerImg);  
-    
+     return JSON.stringify(scrapedPlayerImg);      
   });
   return data
+  console.log(data)
   await browser.close();
 };
 
@@ -122,7 +122,7 @@ const getResults = async (url) => {
     scrapedPlayerInfo[statName] = statVal;
   })
  
-//  console.log(JSON.stringify(scrapedPlayerInfo));
+ console.log(JSON.stringify(scrapedPlayerInfo) + " " + "This is from line 126 scraper.js");
  return JSON.stringify(scrapedPlayerInfo); 
 };
 

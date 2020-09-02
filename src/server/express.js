@@ -24,7 +24,6 @@ app.post('/api', async function (req, res) {
     let playerInfo = await scraper.getResults(req.body.FutbinURL) //gets player stats
     let playerImage = await scraper.fetchImg(req.body.FutwizURL) //gets images to make player image 
     let player =  await helpers.addPlayer(playerImage, playerInfo, (new Date()).getTime())
-    await console.log(player.rows[0])
     await helpers.addReview(await player.rows[0].id, req.body.Rating, req.body.Review, req.body.Comparison, (new Date()).getTime())
     res.send('POST request to the homepage') 
     console.log('posting the posts')

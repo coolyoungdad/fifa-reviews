@@ -1,4 +1,5 @@
 const { Pool, Client } = require('pg')
+require('dotenv').config()
 
 const pool = new Pool({
     user: 'xxx',
@@ -17,12 +18,12 @@ const client = new Client({
 // Get all posts query
 function getPosts() {
     return new Promise((resolve, reject) => {
-        pool.query('SELECT reviews.ratings AS ratings, reviews.review AS review, reviews.comparisons AS comparisons, players.player_json AS player_json, players.img AS img FROM players, reviews WHERE players.rowid = reviews.player_id ORDER BY reviews.ts DESC', (err, rows) => {
+        pool.query('SELECT reviews.ratings AS ratings, reviews.review AS review, reviews.comparisons AS comparisons, players.player_json AS player_json, players.img AS img FROM players, reviews WHERE players.id = reviews.player_id ORDER BY reviews.ts DESC', (err, rows) => {
             if (err) {
                 reject(err);
             }
-            console.log(rows);
-            resolve(rows.map(row => {
+            console.log(rows.rows);
+            resolve(rows.rows.map(row => {
                 return {
                     img: row['img'],
                     ratings: row['ratings'],

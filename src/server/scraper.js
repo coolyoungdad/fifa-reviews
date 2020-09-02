@@ -18,7 +18,7 @@ const fetchImg = async (url) => {
     scrapedPlayerImg['bgimage'] = bgImg;
 
     //gets player image
-    const playerPicElement = document.body.querySelector("#panel > div.main-content.background-dark > div > div:nth-child(2) > div > div.playerprofile-item > div:nth-child(1) > div > div.card-20-face > div > img");
+    const playerPicElement = document.body.querySelector("#panel > div.main-content.background-dark > div > div:nth-child(2) > div > div.playerprofile-item > div:nth-child(1) > div > div.card-20-face-alt > img");
     const playerImg = playerPicElement.getAttribute('src')
     scrapedPlayerImg['playerimage'] = playerImg;
 

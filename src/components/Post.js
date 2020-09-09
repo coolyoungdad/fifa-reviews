@@ -73,12 +73,16 @@ class Post extends React.Component {
                     </div>
 
                     <div className="player-review">
-                        <LinesEllipsis text='' maxLine='2' ellipsis='...' trimRight basedOn='words' className={this.state.isShow ? "show" : "hide"}/>
-                        <p className={this.state.isShow ? "show" : "hide"}></p>
-                        <p><h3>Review:</h3>{this.props.review}</p>
-                        <p><h3>Comparisons:</h3>{this.props.comparisons}</p>
-                        <h3 className={this.state.isShow ? "show" : "hide"}>Ratings: {this.props.ratings}</h3>
+                        {/* Line Ellipses Show/Hide */}
+                        <h3 className="bold">Review:</h3>
+                        <LinesEllipsis text={this.props.review} maxLine='2' ellipsis='...' trimright='true' basedOn='words' className={this.state.isShow ? "hide" : "show"}/>  
+                        <p className={this.state.isShow ? "show" : "hide"}>{this.props.review}</p>
+
+
+                        <p className={this.state.isShow ? "" : "light"}><h3 className="bold">Comparisons:</h3>{this.props.comparisons}</p>
+                        <h3 className={this.state.isShow ? "show" : "hide"}><h4 className="bold">Ratings: </h4>{this.props.ratings}</h3>
                     </div>
+
 
                     <div className="info-column" className={this.state.isShow ? "show" : "hide"}>
                         <div className="player-main"></div>                       

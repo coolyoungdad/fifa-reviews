@@ -28,7 +28,7 @@ h3 {
 }
 
 p {
-    /* font-weight: 100; */
+    font-weight: 200;
 }
 
 span {}
@@ -125,7 +125,8 @@ header a:visited {
 
 .LinesEllipsis,
 .LinesEllipsis--clamped {
-    margin: -2%;
+    font-weight: 200;
+
 }
 .overall-wrapper {
     white-space: pre-wrap;
@@ -473,6 +474,10 @@ header a:visited {
 
 .bold {
     font-weight: 400;
+}
+
+.light {
+    font-weight:200;
 }
 
 /*footer.js css*/

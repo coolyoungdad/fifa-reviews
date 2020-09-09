@@ -11,9 +11,13 @@ const pool = new Pool({
 
 const client = new Client ({
     connectionString: connectionString,
-
 })
 
+function createTables() {
+    pool.query('CREATE TABLE players (id SERIAL PRIMARY KEY, img TEXT NOT NULL, player_json TEXT NOT NULL, ts BIGINT NOT NULL)');
+    pool.query('CREATE TABLE reviews (player_id INTEGER NOT NULL, ratings TEXT NOT NULL, review TEXT NOT NULL, comparisons TEXT NOT NULL, ts BIGINT NOT NULL)');
+    }
+createTables()
 
 // Get all posts query
 function getPosts() {

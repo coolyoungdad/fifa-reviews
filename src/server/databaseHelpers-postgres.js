@@ -1,19 +1,19 @@
-const { Pool, Client } = require('pg')
 require('dotenv').config()
+const { Pool, Client } = require('pg')
+
+const connectionString =  process.env.DATABASE_URL 
+console.log(connectionString)
 
 const pool = new Pool({
-    user: 'xxx',
-    password: 'xxx',
-    database: 'futdb',
-    port: 5432,
+    connectionString: connectionString,
   })
+  
 
-const client = new Client({
-    user: 'xxx',
-    password:'xxx',
-    database:'futdb',
-    port: '5432'
+const client = new Client ({
+    connectionString: connectionString,
+
 })
+
 
 // Get all posts query
 function getPosts() {
